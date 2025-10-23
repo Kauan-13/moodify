@@ -15,19 +15,39 @@
 
 .icons{
   font-size: 30px;
-
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+.account_icon{
+  position: absolute;
+  bottom: 80px;
+}
+
+.help_icon{
+  position: absolute;
+  bottom: 10px;
+}
+
+.position{
   width: 100%;
   padding-left: 40px;
 }
 
-.account_icon{
-    position: absolute;
-    bottom: 10px;
+.name{
+  font-weight: bold;
 }
 
+.logo_name{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    gap:10px
+}
 
 ul{
     list-style: none;
@@ -41,11 +61,16 @@ li{
     cursor: pointer;
     gap: 20px;
     width: 100%;
-    height: 70px;
+    height: 80px;
 
 }
 
 p{
   font-size: 20px;
+  margin:0
   
 }
+img{
+  height: 40px;
+}
+
