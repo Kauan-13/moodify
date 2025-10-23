@@ -10,7 +10,7 @@
 }
 
 .open{
-    width: 250px;
+    width: 240px;
 }
 
 .icons{
@@ -18,8 +18,9 @@
 
   display: flex;
   align-items: center;
-  justify-content: start;
   flex-direction: column;
+  width: 100%;
+  padding-left: 40px;
 }
 
 .account_icon{
@@ -37,4 +38,14 @@ ul{
 li{
     display: flex;
     align-items: center;
+    cursor: pointer;
+    gap: 20px;
+    width: 100%;
+    height: 70px;
+
+}
+
+p{
+  font-size: 20px;
+  
 }

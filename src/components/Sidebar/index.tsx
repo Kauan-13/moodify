@@ -11,33 +11,35 @@ const Sidebar = () =>{
 
             <p>Logotipo</p>
 
-            <ul className={style.icons}>
+            <nav>
+                <ul className={style.icons}>
 
-                <li onClick={()=>{setIsOpen(!isOpen)}}>
-                    <span> {isOpen? <IoIosArrowForward/> : <IoIosArrowBack /> }</span>
-                    <p>{isOpen? "Fechar" : ""}</p>
-                </li>
+                    <li onClick={()=>{setIsOpen(!isOpen)}}>
+                        <span> {isOpen? <IoIosArrowForward/> : <IoIosArrowBack /> }</span>
+                        <p>{isOpen? "Fechar" : ""}</p>
+                    </li>
 
-                <li>
-                    <MdOutlineLibraryAdd/>
-                    <p> {isOpen? "Nova Playlist" : ""} </p>
-                </li>
+                    <li>
+                        <MdOutlineLibraryAdd/>
+                        <p> {isOpen? "Nova Playlist" : ""} </p>
+                    </li>
 
-                
-                <li>
-                    <MdPlaylistPlay/>
-                    <p> {isOpen? "Playlists" : ""} </p>
-                </li>
+                    
+                    <li>
+                        <MdPlaylistPlay/>
+                        <p> {isOpen? "Playlists" : ""} </p>
+                    </li>
 
-                <p> {isOpen? "<lista>" : "" }</p>
-                
+                    <p> {isOpen? "<lista>" : "" }</p>
+                    
 
-                <li className={style.account_icon}>
-                    <MdAccountCircle></MdAccountCircle>
-                    <p>{isOpen? "Perfil" : "" }</p>
-                </li>
+                    <li className={style.account_icon}>
+                        <MdAccountCircle></MdAccountCircle>
+                        <p>{isOpen? "Perfil" : "" }</p>
+                    </li>
 
-            </ul>
+                </ul>
+            </nav>
 
         </div>
     )
