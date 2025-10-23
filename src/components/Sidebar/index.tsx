@@ -12,13 +12,15 @@ const Sidebar = () =>{
             <div className={style.logo_name}>
                 <img src="../public/logo.png" alt="logo"/>
                 <p className={style.title}>{isOpen? "Moodify" : ""}</p>
+
             </div>
 
             <nav>
-                <ul className={style.icons}>
+                <ul className={`${style.icons} ${style.position}`}>
 
                     <li onClick={()=>{setIsOpen(!isOpen)}}>
                         <span> {isOpen? <IoIosArrowBack /> :  <IoIosArrowForward/> }</span>
+
                         <p>{isOpen? "Fechar" : ""}</p>
                     </li>
 
