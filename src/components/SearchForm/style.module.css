@@ -1,0 +1,14 @@
+.form {
+    
+}
+
+.inputTime {
+    margin-top: 20px;
+    height: 32px;
+    width: 100px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
