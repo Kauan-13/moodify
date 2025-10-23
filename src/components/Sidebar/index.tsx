@@ -1,6 +1,6 @@
 import { useState } from "react";
 import style from "./style.module.css"
-import { IoIosArrowForward, IoIosArrowBack   } from "react-icons/io";
+import { IoIosArrowForward, IoIosArrowBack, IoIosHelpCircle    } from "react-icons/io";
 import { MdOutlineLibraryAdd, MdPlaylistPlay, MdAccountCircle } from "react-icons/md";
 
 const Sidebar = () =>{
@@ -9,13 +9,16 @@ const Sidebar = () =>{
     return(
         <div className={`${style.sidebar} ${isOpen? style.open : " "}`}>
 
-            <p>Logotipo</p>
+            <div className={style.logo_name}>
+                <img src="../public/logo.png" alt="logo"/>
+                <p className={style.title}>{isOpen? "Moodify" : ""}</p>
+            </div>
 
             <nav>
                 <ul className={style.icons}>
 
                     <li onClick={()=>{setIsOpen(!isOpen)}}>
-                        <span> {isOpen? <IoIosArrowForward/> : <IoIosArrowBack /> }</span>
+                        <span> {isOpen? <IoIosArrowBack /> :  <IoIosArrowForward/> }</span>
                         <p>{isOpen? "Fechar" : ""}</p>
                     </li>
 
@@ -26,7 +29,7 @@ const Sidebar = () =>{
 
                     
                     <li>
-                        <MdPlaylistPlay/>
+                        <MdPlaylistPlay size={34}/>
                         <p> {isOpen? "Playlists" : ""} </p>
                     </li>
 
@@ -36,6 +39,11 @@ const Sidebar = () =>{
                     <li className={style.account_icon}>
                         <MdAccountCircle></MdAccountCircle>
                         <p>{isOpen? "Perfil" : "" }</p>
+                    </li>
+
+                    <li className={style.help_icon}>
+                        <IoIosHelpCircle ></IoIosHelpCircle >
+                        <p>{isOpen? "Ajuda" : "" }</p>
                     </li>
 
                 </ul>
