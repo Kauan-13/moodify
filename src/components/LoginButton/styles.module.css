@@ -1,0 +1,30 @@
+
+.button {
+    outline: none;
+    offset: none;
+    border: none;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    background-color: #E3E3E3;
+    border-radius: 4rem;
+    padding: 12px 24px;
+
+    cursor: pointer;
+
+    transition: all .1s ease-in-out;
+}
+
+.button:hover {
+    background-color: #d1d1d1;
+}
+
+.button:active {
+    background-color: rgb(179, 179, 179)
+}
+
+span {
+    text-transform: capitalize;
+}
