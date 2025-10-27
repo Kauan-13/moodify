@@ -1,25 +1,26 @@
 import { useState } from "react";
 import SearchBar from "../SearchBar";
 import style from "./style.module.css";
-import { InputMask } from '@react-input/mask';
+import TimeInput from "../TimeInput";
+import TagInput from "../TagInput";
 
 const SearchForm = () => {
-    const [time, setTime] = useState("");
+    const [isClicked, setIsClicked] = useState(false);
+    const [tags, setTags] = useState([]);
 
     return (
         <form action="" className={style.form}>
-            <SearchBar/>
-            <InputMask
-                mask= "___min"
-                value={time}
-                onChange={(e) => setTime(e.target.value)}
-
-                replacement={{ _: /\d/ }}
-
-                showMask
-                >
-            </InputMask>
-            
+            <SearchBar onClick={() => {setIsClicked(true)}}/>
+            {
+                isClicked == true ? 
+                    <div className={style.filters}>
+                        <TimeInput/>
+                        <div className={style.tags}>
+                            <TagInput tags={tags} label={"Filtragem:"} onChange={setTags}/>
+                        </div>
+                    </div> 
+                    : null
+            }
         </form>
     )
 }
