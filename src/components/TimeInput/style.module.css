@@ -1,0 +1,41 @@
+.input:focus {
+    outline: none;
+}
+
+.timeInput {
+    position: relative;
+    width: fit-content;
+}
+
+.input {
+    height: 36px;
+    width: 100px;
+    padding-top: 5px;
+    padding-left: 5px;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.timeInput > label {
+    position: absolute;
+    top: -7px;
+    left: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+
+    font-size: 14px;
+    background-color: white;
+}
+
+.timeInput > span {
+    position: absolute;
+    top: 14px;
+    right: 20px;
+    color: rgba(0, 0, 0, 0.7);
+    pointer-events: none;
+}
+
+.input:focus + span {
+    color: black;
+}
