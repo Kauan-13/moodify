@@ -1,51 +1,160 @@
-.sidebar{
+.sidebar {
   height: 100vh;
   width: 120px;
   position: fixed;
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
   color: black;
   left: 0;
   top: 0;
   transition: width 0.3s ease;
 }
 
-.open{
-    width: 240px;
+.open {
+  width: 240px;
 }
 
-.icons{
-  font-size: 30px;
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 30px 40px;
+  font-size: 24px;
+  font-weight: 600;
+}
 
+.logo p {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.soundwave {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 30px;
+}
+
+.soundwave span {
+  width: 3px;
+  background-color: black;
+  border-radius: 2px;
+  animation: wave 1s ease-in-out infinite;
+}
+
+.soundwave span:nth-child(1) {
+  height: 8px;
+  animation-delay: 0s;
+}
+
+.soundwave span:nth-child(2) {
+  height: 16px;
+  animation-delay: 0.1s;
+}
+
+.soundwave span:nth-child(3) {
+  height: 24px;
+  animation-delay: 0.2s;
+}
+
+.soundwave span:nth-child(4) {
+  height: 16px;
+  animation-delay: 0.3s;
+}
+
+.soundwave span:nth-child(5) {
+  height: 8px;
+  animation-delay: 0.4s;
+}
+
+@keyframes wave {
+
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+
+  50% {
+    transform: scaleY(1.5);
+  }
+}
+
+.icons {
+  font-size: 30px;
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+.account_icon {
+  position: absolute;
+  bottom: 80px;
+  left: 40px;
+
+}
+
+.help_icon {
+  position: absolute;
+  bottom: 10px;
+  left: 40px;
+}
+
+.position {
   width: 100%;
   padding-left: 40px;
+  box-sizing: border-box;
 }
 
-.account_icon{
-    position: absolute;
-    bottom: 10px;
+.icons ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-
-ul{
-    list-style: none;
-    margin: 0;
-    padding:0;
+.icons li {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 20px;
+  width: 100%;
+  height: 70px;
+  white-space: nowrap;
 }
 
-li{
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    gap: 20px;
-    width: 100%;
-    height: 70px;
-
-}
-
-p{
+.icons p {
   font-size: 20px;
-  
+  margin: 0;
+}
+
+.playlists {
+  background-color: #e9e9e9;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 20px;
+  width: auto !important;
+  height: auto !important;
+  gap: 0;
+  margin-top: 100px;
+  margin-left: 5px;
+  width: 150px;
+}
+
+.playlists li {
+  display: flex;
+  align-items: center;
+  height: auto;
+  padding: 8px 0;
+  gap: 0;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.playlists li:hover {
+  opacity: 0.7;
+}
+
+.playlists li p {
+  font-size: 14px;
+  color: #333;
+  margin: 0;
 }
