@@ -6,11 +6,11 @@
 
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 24px;
 
     background-color: #E3E3E3;
     border-radius: 4rem;
-    padding: 12px 24px;
+    padding: 12px 32px;
 
     cursor: pointer;
 
@@ -25,6 +25,15 @@
     background-color: rgb(179, 179, 179)
 }
 
-span {
+.button p {
+    font-size: 16px;
+}
+
+.button span {
     text-transform: capitalize;
+}
+
+.button .amazon {
+    width: auto;
+    height: 30px;
 }

@@ -1,28 +1,31 @@
-import { IoIosClose } from 'react-icons/io'
-import LoginButton from '../LoginButton'
+import { IoIosClose } from "react-icons/io";
+import LoginButton from "../LoginButton";
+import styles from "./styles.module.css";
 
-import styles from './styles.module.css'
+type LoginPopupProps = {
+  onClose: () => void;
+};
 
-const LoginPupup = () => {
+const LoginPopup = ({ onClose }: LoginPopupProps) => {
+  return (
+    <div className={styles.card}>
+        <IoIosClose className={styles.close} onClick={onClose} />
 
-    return (
-        <div className={styles.card}>
-
-            <IoIosClose className={styles.close} />
-
-            <div className={styles.top}>
-                <h3>Entrar ou Cadastrar</h3>
-                <p>Você vai poder aproveitar playlists geradas de forma inteligentes e aproveitar músicas de uma nova maneira</p>
-            </div>
-
-            <LoginButton appName='spotify' iconPath='src/assets/react.svg' />
-            <LoginButton appName='deezer' iconPath='src/assets/react.svg' />
-            <LoginButton appName='amazon music' iconPath='src/assets/react.svg' />
-            <LoginButton appName='apple music' iconPath='src/assets/react.svg' />
-            <LoginButton appName='youtube music' iconPath='src/assets/react.svg' />
+        <div className={styles.top}>
+            <h3>Entrar ou Cadastrar</h3>
+            <p>
+                Você vai poder aproveitar playlists geradas de forma inteligentes e
+                aproveitar músicas de uma nova maneira
+            </p>
         </div>
-    )
 
-}
+        <LoginButton appName="spotify" iconPath="src/assets/spotify.svg" />
+        <LoginButton appName="deezer" iconPath="src/assets/deezer.svg" />
+        <LoginButton appName="amazon music" iconPath="src/assets/amazon.png" />
+        <LoginButton appName="apple music" iconPath="src/assets/apple.svg" />
+        <LoginButton appName="youtube music" iconPath="src/assets/ytm.svg" />
+    </div>
+  );
+};
 
-export default LoginPupup
+export default LoginPopup;

@@ -1,22 +1,6 @@
-.top {
-    margin-bottom: 24px;
-    text-align: center;
-
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.top h3 {
-    font-size: 32px;
-}
-
-.top p {
-    font-size: 18px;
-}
-
 .card {
-    position: relative;
+    position: fixed;
+    z-index: 1000;
 
     box-sizing: border-box;
     margin-inline: 16px;
@@ -34,6 +18,23 @@
     border-radius: 16px;
     border: 1px solid #e3e3e3;
     box-shadow: 0px 0px 10px 0px rgba(63, 63, 63, 0.3)
+}
+
+.top {
+    margin-bottom: 24px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.top h3 {
+    font-size: 32px;
+}
+
+.top p {
+    font-size: 18px;
 }
 
 .close {
