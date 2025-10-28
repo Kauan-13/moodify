@@ -29,7 +29,7 @@ const Sidebar = () => {
                             setIsOpen(!isOpen)
                         }}
                     >
-                        <span> {isOpen ? <IoIosArrowForward /> : <IoIosArrowBack />}</span>
+                        <span> {isOpen ? <IoIosArrowBack /> :  <IoIosArrowForward /> }</span>
                         <p>{isOpen ? "Fechar" : ""}</p>
                     </li>
 
