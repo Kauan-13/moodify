@@ -5,3 +5,10 @@
   scroll-behavior: smooth;
   scrollbar-width: thin;
 }
+
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

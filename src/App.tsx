@@ -1,11 +1,11 @@
 import LoginPopup from './components/LoginPopup'
+import SearchForm from "./components/SearchForm"
 
 function App() {
-
   return (
-    <>
-      <LoginPopup></LoginPopup>
-    </>
+    <main>
+      <SearchForm/>
+    </main>
   )
 }
 
