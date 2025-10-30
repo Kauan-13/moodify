@@ -19,11 +19,11 @@ const LoginPopup = ({ onClose }: LoginPopupProps) => {
             </p>
         </div>
 
-        <LoginButton appName="spotify" iconPath="public/spotify.svg" />
-        <LoginButton appName="deezer" iconPath="public/deezer.svg" />
-        <LoginButton appName="amazon music" iconPath="public/amazon.png" />
-        <LoginButton appName="apple music" iconPath="public/apple.svg" />
-        <LoginButton appName="youtube music" iconPath="public/ytm.svg" />
+        <LoginButton appName="spotify" iconPath="./spotify.svg" />
+        <LoginButton appName="deezer" iconPath="./deezer.svg" />
+        <LoginButton appName="amazon music" iconPath="./amazon.png" />
+        <LoginButton appName="apple music" iconPath="./apple.svg" />
+        <LoginButton appName="youtube music" iconPath="./ytm.svg" />
     </div>
   );
 };
