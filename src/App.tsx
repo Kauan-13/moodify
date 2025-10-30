@@ -8,11 +8,8 @@ function App() {
 
   return (
     <main>
-      <Sidebar></Sidebar>
+      <Sidebar onClick={() => setShowPopup(true)} />
       <SearchForm/>
-
-      {/* BOTÃO ILUSTRATIVO */}
-      <button onClick={() => setShowPopup(true)}>login</button>
       {showPopup && <LoginPopup onClose={() => setShowPopup(false)} />}
     </main>
   );
