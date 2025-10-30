@@ -3,7 +3,9 @@ import style from "./style.module.css"
 import { IoIosArrowForward, IoIosArrowBack, IoIosHelpCircle } from "react-icons/io";
 import { MdOutlineLibraryAdd, MdPlaylistPlay, MdAccountCircle } from "react-icons/md";
 
-const Sidebar = () => {
+interface SidebarProps { onClick: () => void }
+
+const Sidebar = ({ onClick }: SidebarProps) => {
     const [isOpen, setIsOpen] = useState(false)
     const [isPlaylistOpen, setIsPlaylistOpen] = useState(false)
 
@@ -59,7 +61,7 @@ const Sidebar = () => {
                         </li>
                     )}
 
-                    <li className={style.account_icon}>
+                    <li className={style.account_icon} onClick={onClick}>
                         <MdAccountCircle></MdAccountCircle>
                         <p>{isOpen ? "Perfil" : ""}</p>
                     </li>
