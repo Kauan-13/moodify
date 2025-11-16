@@ -1,0 +1,104 @@
+.cardMusic {
+    position: relative;
+
+    width: 50vw;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    padding-left: 20px;
+    padding-right: 20px;
+
+    background-color: #F2F2F2;
+    border-radius: 10px;
+
+    user-select: none;
+}
+
+.albumImage {
+    position: relative;
+}
+
+.albumImage > img, .background {
+    height: 100px;
+    width: 100px;
+
+    border-radius: 100%;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    background-color: transparent;
+    transition: all 100ms ease-in-out;
+}
+
+.backgroundPlay {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.cardMusic:hover > .albumImage > .background {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: transparent;
+    
+
+    transition: all 100ms ease-in-out;
+}
+
+.play {
+    font-size: 35px;
+}
+
+.pause {
+    color: white;
+    font-size: 45px;
+}
+
+.cardMusic:hover > .albumImage > .icon {
+    color: white;
+}
+
+.musicInfo {
+    width: 77%;
+    position: absolute;
+    left: 130px;
+}
+
+.musicInfo > h3 {
+    font-size: 30px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow-wrap: break-word;
+}
+
+.musicInfo > h4 {
+    font-size: 16px;
+    font-weight: 400;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow-wrap: break-word;
+}
+
+.likeDislike {
+    font-size: 35px;
+    color: #6B6B6B;
+}
+
+.dislike {
+    transform: scaleX(-1)
+}
+
+.liked {
+    color: black;
+}
