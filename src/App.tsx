@@ -1,23 +1,15 @@
-
-import { useState } from "react";
-import LoginPopup from "./components/LoginPopup";
-import SearchForm from "./components/SearchForm";
-import Sidebar from './components/Sidebar'
-import Title from "./components/Title";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./components/HomePage";
+import Playlist from "./components/Playlist";
 
 function App() {
-    const [showPopup, setShowPopup] = useState(false);
-
     return (
-        <main>
-            <Sidebar onClick={() => setShowPopup(true)} />
-            <div className="titleSearch">
-                <Title/>
-                <SearchForm/>
-            </div>
-
-            {showPopup && <LoginPopup onClose={() => setShowPopup(false)} />}
-        </main>
+        <BrowserRouter>
+            <Routes>
+                <Route index path="/moodify" element={<HomePage/>}></Route>
+                <Route path="/moodify/playlist" element={<Playlist/>}></Route>
+            </Routes>
+        </BrowserRouter>
     );
 }
 
