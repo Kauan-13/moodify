@@ -6,7 +6,7 @@ import TagInput from "../TagInput";
 
 const SearchForm = () => {
     const [isClicked, setIsClicked] = useState(false);
-    const [tags, setTags] = useState([]);
+    const [tags, setTags] = useState<string[]>([]);
 
     return (
         <form action="" className={style.form}>
