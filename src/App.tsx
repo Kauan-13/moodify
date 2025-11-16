@@ -1,15 +1,15 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import Playlist from "./components/Playlist";
 
 function App() {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Routes>
-                <Route index path="/moodify" element={<HomePage/>}></Route>
-                <Route path="/moodify/playlist" element={<Playlist/>}></Route>
+                <Route index path="/" element={<HomePage/>}></Route>
+                <Route path="/playlist" element={<Playlist/>}></Route>
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     );
 }
 
