@@ -2,6 +2,7 @@ import { useState } from "react"
 import style from "./style.module.css"
 import { IoIosArrowForward, IoIosArrowBack, IoIosHelpCircle } from "react-icons/io";
 import { MdOutlineLibraryAdd, MdPlaylistPlay, MdAccountCircle } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 interface SidebarProps { onClick: () => void }
 
@@ -36,8 +37,10 @@ const Sidebar = ({ onClick }: SidebarProps) => {
                     </li>
 
                     <li>
-                        <MdOutlineLibraryAdd />
-                        <p> {isOpen ? "Nova Playlist" : ""} </p>
+                        <Link to={"/"} className={style.link}>
+                            <MdOutlineLibraryAdd />
+                            <p> {isOpen ? "Nova Playlist" : ""} </p>
+                        </Link>
                     </li>
 
                     <li
@@ -54,7 +57,9 @@ const Sidebar = ({ onClick }: SidebarProps) => {
                             <div className={style.playlists}>
                                 {playlists.map((playlist, index) => (
                                     <li key={index}>
-                                        <p>{playlist}</p>
+                                        <Link to={"/playlist"} className={style.link}>
+                                            <p>{playlist}</p>
+                                        </Link>
                                     </li>
                                 ))}
                             </div>

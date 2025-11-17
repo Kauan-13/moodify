@@ -158,3 +158,10 @@
   color: #333;
   margin: 0;
 }
+
+.link {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  gap: 20px;
+}
