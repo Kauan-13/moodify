@@ -45,6 +45,7 @@ const Sidebar = ({ onClick }: SidebarProps) => {
 
                     <li
                         onClick={() => {
+                            if (!isOpen) setIsOpen(true); 
                             setIsPlaylistOpen(!isPlaylistOpen)
                         }}
                     >
