@@ -6,6 +6,7 @@
 .profileInfo {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     width: 100vw;
     max-width: 1200px;
     height: 30%;
@@ -14,6 +15,7 @@
 .profileInfo .info {
     display: flex;
     align-items: center;
+    max-width: 60%;
 }
 
 .profileInfo .accIcon {
@@ -21,7 +23,7 @@
 }
 
 .profileInfo .username {
-    font-size: 130px;
+    font-size: 70px;
     font-weight: 700;
 }
 
@@ -108,8 +110,8 @@
 }
 
 .playlistCover img {
-    height: 100px;
-    width: auto;
+    height: auto;
+    width: 100px;
 }
 
 .playlistCover img:nth-child(1) {

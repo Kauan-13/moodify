@@ -3,15 +3,13 @@ import Sidebar from "../Sidebar";
 import LoginPopup from "../LoginPopup";
 import style from "./style.module.css";
 import { MdAccountCircle, MdLogout, MdSync } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
 
 const ProfilePage = () => {
     const [showPopup, setShowPopup] = useState(false);
-    
-    const user = {
-        name: 'sofia',
-        service: 'spotify'
-    }
+    const { user, logout } = useAuth();
+    const navigate = useNavigate();
 
     const playlists = [
         {
@@ -56,6 +54,11 @@ const ProfilePage = () => {
         }
     ];
 
+    const handleLogout = () => {
+        logout();
+        navigate('/');
+    };
+
     return (
         <main className={style.profile}>
             <Sidebar onClick={() => setShowPopup(true)} />
@@ -64,9 +67,9 @@ const ProfilePage = () => {
                 <div className={style.info}>
                     <MdAccountCircle className={style.accIcon} />
                     <div>
-                        <p className={style.username}>{user.name}</p>
+                        <p className={style.username}>{user!.username}</p>
                         <div className={style.playlistInfo}>
-                            <img src={`./${user.service}.svg`} alt={user.service} />
+                            <img src={user!.service === 'amazon' ? './amazon.png' : `./${user!.service}.svg`} alt={user!.service} />
                             <p>{ playlists.length === 1 ? '1 playlist criada' : `${playlists.length} playlists criadas` }</p>
                         </div>
                     </div>
@@ -78,7 +81,7 @@ const ProfilePage = () => {
                             <MdSync />
                             <span>Sincronizar Outro Streaming</span>
                         </button>
-                        <button className={style.logoutButton}>
+                        <button className={style.logoutButton} onClick={handleLogout}>
                             <MdLogout />
                             <span>Logout</span>
                         </button>
@@ -89,10 +92,10 @@ const ProfilePage = () => {
             <div className={style.profilePlaylists} >
 
                 {
-                    playlists.map(playlist => (
-                        <div className={style.profilePlaylistCard} >
+                    playlists.map((playlist, index) => (
+                        <div key={index} className={style.profilePlaylistCard} >
                             <Link to='/playlist' className={style.playlistCover}>
-                                {playlist.covers.map(cover => ( <img src={cover} alt={cover} /> ))}
+                                {playlist.covers.map((cover, idx) => ( <img key={idx} src={cover || "/placeholder.svg"} alt={cover} /> ))}
                             </Link>
                             <Link to='/playlist' className={style.playlistName} >{playlist.name}</Link>
                             <Link to='/playlist' className={style.playlistSongs} >{playlist.songs} músicas</Link>
