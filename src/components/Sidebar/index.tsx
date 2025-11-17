@@ -22,40 +22,42 @@ const Sidebar = ({ onClick }: SidebarProps) => {
                     <span></span>
                     <span></span>
                 </div>
-                {isOpen && <p>Moodify</p>}
+                <p>Moodify</p>
             </div>
 
             <nav>
                 <ul className={`${style.icons} ${style.position}`}>
                     <li
+                        className={style.threeFirstButtons}
                         onClick={() => {
                             setIsOpen(!isOpen)
                         }}
                     >
                         <span> {isOpen ? <IoIosArrowBack /> :  <IoIosArrowForward /> }</span>
-                        <p>{isOpen ? "Fechar" : ""}</p>
+                        <p>{isOpen ? "Fechar" : "Abrir"}</p>
                     </li>
 
-                    <li>
+                    <li  className={style.threeFirstButtons}>
                         <Link to={"/"} className={style.link}>
                             <MdOutlineLibraryAdd />
-                            <p> {isOpen ? "Nova Playlist" : ""} </p>
+                            <p>Nova Playlist</p>
                         </Link>
                     </li>
 
                     <li
+                        className={style.threeFirstButtons}
                         onClick={() => {
                             if (!isOpen) setIsOpen(true); 
                             setIsPlaylistOpen(!isPlaylistOpen)
                         }}
                     >
-                        <MdPlaylistPlay />
-                        <p> {isOpen ? "Playlists" : ""} </p>
+                        <span><MdPlaylistPlay /></span>
+                        <p>Playlists</p>
                     </li>
 
-                    {isOpen && isPlaylistOpen && (
-                        <li >
-                            <div className={style.playlists}>
+                    {isPlaylistOpen && (
+                        <li>
+                            <div className={`${style.playlists} ${isOpen ? style.show : ''}`}>
                                 {playlists.map((playlist, index) => (
                                     <li key={index}>
                                         <Link to={"/playlist"} className={style.link}>
@@ -69,12 +71,12 @@ const Sidebar = ({ onClick }: SidebarProps) => {
 
                     <li className={style.account_icon} onClick={onClick}>
                         <MdAccountCircle></MdAccountCircle>
-                        <p>{isOpen ? "Perfil" : ""}</p>
+                        <p>Perfil</p>
                     </li>
 
                     <li className={style.help_icon}>
                         <IoIosHelpCircle ></IoIosHelpCircle >
-                        <p>{isOpen ? "Ajuda" : ""}</p>
+                        <p>Ajuda</p>
                     </li>
                 </ul>
             </nav>
