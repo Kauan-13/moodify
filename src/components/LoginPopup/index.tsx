@@ -8,15 +8,23 @@ type LoginPopupProps = {
 
 const LoginPopup = ({ onClose }: LoginPopupProps) => {
   return (
-    <div className={styles.card}>
+    <>
+      {/* Backdrop */}
+      <div 
+        className={styles.backdrop} 
+        onClick={onClose}
+      />
+      
+      {/* Popup Card */}
+      <div className={styles.card}>
         <IoIosClose className={styles.close} onClick={onClose} />
 
         <div className={styles.top}>
-            <h3>Entrar ou Cadastrar</h3>
-            <p>
-                Você vai poder aproveitar playlists geradas de forma inteligentes e
-                aproveitar músicas de uma nova maneira
-            </p>
+          <h3>Entrar ou Cadastrar</h3>
+          <p>
+            Você vai poder aproveitar playlists geradas de forma inteligentes e
+            aproveitar músicas de uma nova maneira
+          </p>
         </div>
 
         <LoginButton appName="spotify" iconPath="./spotify.svg" />
@@ -24,7 +32,8 @@ const LoginPopup = ({ onClose }: LoginPopupProps) => {
         <LoginButton appName="amazon music" iconPath="./amazon.png" />
         <LoginButton appName="apple music" iconPath="./apple.svg" />
         <LoginButton appName="youtube music" iconPath="./ytm.svg" />
-    </div>
+      </div>
+    </>
   );
 };
 
