@@ -9,13 +9,11 @@ type LoginPopupProps = {
 const LoginPopup = ({ onClose }: LoginPopupProps) => {
   return (
     <>
-      {/* Backdrop */}
       <div 
         className={styles.backdrop} 
         onClick={onClose}
       />
       
-      {/* Popup Card */}
       <div className={styles.card}>
         <IoIosClose className={styles.close} onClick={onClose} />
 
