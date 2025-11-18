@@ -14,8 +14,16 @@
     box-shadow: 0 4px 10px rgba(154, 0, 149, .25);
 }
 
-.searchInput {
+/* Added flex container for input and button */
+.searchContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     width: 100%;
+}
+
+.searchInput {
+    flex: 1;
     height: 32px;
     border: none;
     background: transparent;
@@ -28,6 +36,23 @@
 .searchInput::placeholder {
     color: #666;
     font-weight: 300;
+}
+
+.enterButton {
+    padding: 14px 16px;
+    background-color: #9a0095;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    white-space: nowrap;
+}
+
+.enterButton:hover {
+    background-color: #7a006f;
 }
 
 .filterActions {
