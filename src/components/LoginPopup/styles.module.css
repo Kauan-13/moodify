@@ -1,3 +1,4 @@
+
 .backdrop {
     position: fixed;
     top: 0;
@@ -24,10 +25,12 @@
     max-width: 500px;
     min-width: calc(320px - 32px);
 
-    background-color: #F2F2F2;
+    background-color: var(--lilas-playlists);
+
+    color:var(--branco);
 
     border-radius: 16px;
-    border: 1px solid #e3e3e3;
+    border: 1px solid var(--lilas-playlists);
     box-shadow: 0px 0px 10px 0px rgba(63, 63, 63, 0.3)
 }
 
