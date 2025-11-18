@@ -1,0 +1,145 @@
+.profile {
+    flex-direction: column;
+    gap: 32px;
+}
+
+.profileInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100vw;
+    max-width: 1200px;
+    height: 30%;
+}
+
+.profileInfo .info {
+    display: flex;
+    align-items: center;
+    max-width: 60%;
+}
+
+.profileInfo .accIcon {
+    font-size: 300px;
+}
+
+.profileInfo .username {
+    font-size: 70px;
+    font-weight: 700;
+}
+
+.profileInfo .playlistInfo {
+    display: flex;
+    gap: 12px;
+}
+
+.profileInfo .playlistInfo img {
+    height: 24px;
+}
+
+.profileInfo .playlistInfo p {
+    font-size: 16px;
+    opacity: 60%;
+}
+
+.actionButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-end;
+}
+
+.syncButton,
+.logoutButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 25px;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.syncButton {
+    background-color: #333;
+    color: #fff;
+}
+
+.syncButton:hover {
+    background-color: #111;
+}
+
+.logoutButton {
+    background-color: #eaeaea;
+    color: #333;
+}
+
+.logoutButton:hover {
+    background-color: #d0cfcf;
+}
+
+.profilePlaylists {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    text-align: center;
+
+    background-color: #eaeaea;
+    padding: 32px;
+    border-radius: 8px;
+
+    max-width: 1200px;
+    width: 100vw;
+    height: 55%;
+}
+
+.profilePlaylistCard {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.playlistCover {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    border-radius: 8px;
+}
+
+.playlistCover img {
+    height: auto;
+    width: 100px;
+}
+
+.playlistCover img:nth-child(1) {
+    border-top-left-radius: 4px;
+}
+
+.playlistCover img:nth-child(2) {
+    border-top-right-radius: 4px;
+}
+
+.playlistCover img:nth-child(3) {
+    border-bottom-left-radius: 4px;
+}
+
+.playlistCover img:nth-child(4) {
+    border-bottom-right-radius: 4px;
+}
+
+.playlistName {
+    font-weight: 600;
+    font-size: 16px;
+
+    text-decoration: none;
+    color: black;
+}
+.playlistSongs {
+    opacity: 60%;
+
+    text-decoration: none;
+    color: black;
+}

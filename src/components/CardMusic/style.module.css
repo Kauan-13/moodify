@@ -20,11 +20,15 @@
 
 .albumImage {
     position: relative;
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
 }
 
 .albumImage > img, .background {
     height: 100px;
     width: 100px;
+    
     border-radius: 100%;
 }
 
@@ -66,9 +70,8 @@
 }
 
 .musicInfo {
-    width: 77%;
-    position: absolute;
-    left: 130px;
+    overflow: hidden;
+    flex: 5;
 }
 
 .musicInfo > h3 {
@@ -102,8 +105,13 @@
     display: flex;
     align-items: center;
     gap: 15px;
+    right: 10px;
+    min-width: 80px;
+    padding-left: 10px;
+
     font-size: 35px;
     color: #6B6B6B;
+    text-align: end;
 }
 
 .dislike, .like {

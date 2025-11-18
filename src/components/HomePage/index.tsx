@@ -3,13 +3,25 @@ import Sidebar from "../Sidebar"
 import Title from "../Title";
 import SearchForm from "../SearchForm";
 import LoginPopup from "../LoginPopup";
+import { useAuth } from "../../contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
     const [showPopup, setShowPopup] = useState(false);
+    const { user } = useAuth();
+    const navigate = useNavigate();
+
+    const handleProfileClick = () => {
+        if (user !== null && user !== undefined )
+            navigate('/profile');
+
+        else setShowPopup(true);
+    };
 
     return (
         <main>
-            <Sidebar onClick={() => setShowPopup(true)} />
+            <Sidebar onClick={handleProfileClick} />
+            
             <div className="titleSearch">
                 <Title/>
                 <SearchForm/>
