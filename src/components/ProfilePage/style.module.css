@@ -70,7 +70,7 @@
 }
 
 .syncButton:hover {
-    background-color: var(--roxo-hover);
+    background-color: var(--roxo-hover-escuro);
 }
 
 .logoutButton {
@@ -79,7 +79,7 @@
 }
 
 .logoutButton:hover {
-    background-color: #d0cfcf;
+    background-color:  #c9a3e0;
 }
 
 .profilePlaylists {
