@@ -42,6 +42,7 @@
     transition: all 100ms ease-in-out;
 }
 
+
 .backgroundPlay {
     background-color: rgba(0, 0, 0, 0.5);
 }
@@ -100,8 +101,9 @@
     transition: color 100ms ease-in-out;
 }
 
+
 .like:hover, .dislike:hover, .delete:hover{
-    color: black;
+    color: var(--roxo-hover-escuro);
 }
 
 .likeDislike {
