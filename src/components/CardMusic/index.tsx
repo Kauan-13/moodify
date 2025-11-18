@@ -10,11 +10,12 @@ interface Props {
     albumImage: string,
     player: string,
     year: number,
+    playing: boolean,
     onDelete?: () => void;
+    onPlay?: () => void;
 }
 
-const CardMusic = ({ musicName, albumName, albumImage, player, year, onDelete }: Props) => {
-    const [isPlay, setIsPlay] = useState(false);
+const CardMusic = ({ musicName, albumName, albumImage, player, year, playing, onPlay, onDelete}: Props) => {
     const [like, setLike] = useState("");
 
     const handleDelete = () => {
@@ -23,14 +24,20 @@ const CardMusic = ({ musicName, albumName, albumImage, player, year, onDelete }:
         }
     };
 
+    const handlePlay = () => {
+        if (onPlay) {
+            onPlay();
+        }
+    };
+
     return (
         <div className={style.cardMusic}>
             <div className={style.albumImage}>
                 <img src={albumImage} alt="" />
-                <div className={`${style.background} ${isPlay ? style.backgroundPlay : null}`}></div>
+                <div className={`${style.background} ${playing ? style.backgroundPlay : null}`}></div>
                 {
-                    !isPlay ? <FaPlay className={`${style.icon} ${style.play}`} onClick={() => setIsPlay(true)} />
-                        : <FaPause className={`${style.icon} ${style.pause}`} onClick={() => setIsPlay(false)} />
+                    !playing ? <FaPlay className={`${style.icon} ${style.play}`} onClick={handlePlay} />
+                        : <FaPause className={`${style.icon} ${style.pause}`} onClick={handlePlay} />
                 }
             </div>
             <div className={style.musicInfo}>

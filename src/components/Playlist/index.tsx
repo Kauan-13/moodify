@@ -12,6 +12,8 @@ const Playlist = () => {
     const [showMusic2, setShowMusic2] = useState(true);
     const [showMusic3, setShowMusic3] = useState(true);
 
+    const [playing, setPlaying] = useState(-1);
+
     const navigate = useNavigate();
     const { user } = useAuth();
 
@@ -41,7 +43,9 @@ const Playlist = () => {
                             albumImage="./album.jpg"
                             player="Lola Marsh"
                             year={2018}
+                            playing={playing == 1 ? true : false}
                             onDelete={() => setShowMusic1(false)}
+                            onPlay={() => { setPlaying(prev => prev != 1 ? 1 : -1) }}
                         />
                     )}
 
@@ -52,7 +56,9 @@ const Playlist = () => {
                             albumImage="./album1.jpg"
                             player="Taylor Swift"
                             year={2025}
+                            playing={playing == 2 ? true : false}
                             onDelete={() => setShowMusic2(false)}
+                            onPlay={() => { setPlaying(prev => prev != 2 ? 2 : -1) }}
                         />
                     )}
 
@@ -63,7 +69,9 @@ const Playlist = () => {
                             albumImage="./album2.png"
                             player="LE SSERAFIM"
                             year={2024}
+                            playing={playing == 3 ? true : false}
                             onDelete={() => setShowMusic3(false)}
+                            onPlay={() => { setPlaying(prev => prev != 3 ? 3 : -1) }}
                         />
                     )}
                 </div>
