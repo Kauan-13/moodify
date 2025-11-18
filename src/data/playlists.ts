@@ -133,4 +133,37 @@ export const playlistsData: Playlist[] = [
       },
     ],
   },
+  {
+    id: "5",
+    mood: {
+      name: "Star",
+      colors: ["#232c53ff", "#304ba5ff"],
+    },
+    songs: [
+      {
+        id: "0",
+        name: "Starman",
+        artist: "David Bowie",
+        album: "The Rise and Fall of Ziggy Stardust and the Spiders from Mars",
+        year: 1972,
+        coverUrl: "./stardust.jpg",
+      },
+      {
+        id: "1",
+        name: "Space Oddity",
+        artist: "Chris Hadfield",
+        album: "Space Sessions: Songs from a Tin Can",
+        year: 2015,
+        coverUrl: "./space.jpg",
+      },
+      {
+        id: "2",
+        name: "Major Tom (...völlig losgelöst)",
+        artist: "Peter Schilling",
+        album: "Major Tom (...völlig losgelöst) (All Versions)",
+        year: 1983,
+        coverUrl: "./tom.jpg",
+      },
+    ],
+  },
 ];
