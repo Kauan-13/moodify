@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import styles from './styles.module.css'
 
@@ -9,6 +10,7 @@ type LoginButtonProps = {
 
 const LoginButton = ({ iconPath, appName, onServiceSelected }: LoginButtonProps) => {
     const { setUser } = useAuth();
+    const navigate = useNavigate();
 
     const handleClick = () => {
         const mockUsername = `user_${appName.replace(' ', '_')}`;
@@ -17,6 +19,7 @@ const LoginButton = ({ iconPath, appName, onServiceSelected }: LoginButtonProps)
             service: appName
         });
         onServiceSelected?.();
+        navigate('/profile')
     };
 
     return (

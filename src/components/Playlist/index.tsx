@@ -3,6 +3,8 @@ import Sidebar from "../Sidebar";
 import CardMusic from "../CardMusic";
 import LoginPopup from "../LoginPopup";
 import styles from "./styles.module.css";
+import { useAuth } from "../../contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const Playlist = () => {
     const [showPopup, setShowPopup] = useState(false);
@@ -10,9 +12,19 @@ const Playlist = () => {
     const [showMusic2, setShowMusic2] = useState(true);
     const [showMusic3, setShowMusic3] = useState(true);
 
+    const navigate = useNavigate();
+    const { user } = useAuth();
+
+    const handleProfileClick = () => {
+        if (user !== null && user !== undefined )
+            navigate('/profile');
+
+        else setShowPopup(true);
+    };
+
     return (
         <main className={styles.playlistContainer}>
-            <Sidebar onClick={() => setShowPopup(true)} />
+            <Sidebar onClick={() => handleProfileClick()} />
 
             <div className={styles.playlistContent}>
                 <div className={styles.playlistHeader}>
