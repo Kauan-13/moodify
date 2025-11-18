@@ -1,22 +1,24 @@
 
 .cardMusic {
     position: relative;
-
     width: 50vw;
     height: 120px;
     display: flex;
     align-items: center;
-    
+    justify-content: space-between;
     padding-left: 20px;
     padding-right: 20px;
 
     background-color: var(--fundo-secundario);
+
     border-radius: 10px;
-
     user-select: none;
+    transition: all 0.3s ease;
+}
 
-    overflow: hidden;
-    
+.cardMusic.deleting {
+    opacity: 0;
+    transform: translateX(-100%);
 }
 
 .albumImage {
@@ -30,7 +32,6 @@
     height: 100px;
     width: 100px;
     
-
     border-radius: 100%;
 }
 
@@ -54,10 +55,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
     color: transparent;
-    
-
     transition: all 100ms ease-in-out;
 }
 
@@ -85,6 +83,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow-wrap: break-word;
+    margin: 0;
 }
 
 .musicInfo > h4 {
@@ -94,9 +93,21 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow-wrap: break-word;
+    margin: 5px 0 0 0;
+}
+.like, .dislike, .delete {
+    cursor: pointer;
+    transition: color 100ms ease-in-out;
+}
+
+.like:hover, .dislike:hover, .delete:hover{
+    color: black;
 }
 
 .likeDislike {
+    display: flex;
+    align-items: center;
+    gap: 15px;
     right: 10px;
     min-width: 80px;
     padding-left: 10px;
@@ -106,9 +117,15 @@
     text-align: end;
 }
 
-.dislike {
+.dislike, .like {
     transform: scaleX(-1)
 }
+
+.delete{
+    font-size: 30px;
+    margin-bottom: 3px;
+}
+
 
 .liked {
     color: var(--botoes-roxo-forte);
