@@ -53,9 +53,9 @@ const TagInput = ({ tags, label, placeholder, onChange }: TagInputProps) => {
         ))}
       </div>
 
-      {/* <small className={styles.hint}>Pressione Enter para adicionar um filtro</small> */}
+      <small className={tags.length > 0 ? styles.hintHide: `${styles.hint}`}>Pressione Enter para adicionar instrumentos que você não deseja ouvir</small>
     </div>
   )
 }
 
-export default TagInput
+export default TagInput

@@ -1,21 +1,9 @@
 .form {
     position: relative;
+    width: 100%;
+    max-width: 640px;
     height: fit-content;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-
-.filters {
-    position: absolute;
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    
-    top: 90px;
-}
-
-.tags {
-    width: 700px;
 }
