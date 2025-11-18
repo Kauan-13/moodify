@@ -115,7 +115,7 @@
     padding-left: 10px;
 
     font-size: 35px;
-    color: #b5aeb6;
+    color: #c9a1ce;
     text-align: end;
 }
 
@@ -131,4 +131,8 @@
 
 .liked {
     color: var(--botoes-roxo-forte);
+}
+
+.dislike {
+    transform: scaleX(100%);
 }

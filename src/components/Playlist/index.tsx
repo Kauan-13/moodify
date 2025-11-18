@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Sidebar from "../Sidebar";
 import CardMusic from "../CardMusic";
 import LoginPopup from "../LoginPopup";
+import PlaylistActions from "../PlaylistActions";
 import styles from "./styles.module.css";
 import { useAuth } from "../../contexts/AuthContext";
-import { useNavigate } from "react-router-dom";
 import { type Playlist as PlaylistType, type Song as SongType } from "../../types/playlist";
 import { usePlaylists } from "../../contexts/PlaylistContext";
 
@@ -14,6 +14,7 @@ const Playlist = () => {
     const [playlist, setPlaylist] = useState<PlaylistType | null>(null);
     const [visibleSongs, setVisibleSongs] = useState<Set<string>>(new Set());
     const [playing, setPlaying] = useState<string | null>(null);
+    const [playlistName, setPlaylistName] = useState<string>("");
 
     const navigate = useNavigate();
     const { user } = useAuth();
@@ -26,6 +27,7 @@ const Playlist = () => {
             setPlaylist(data);
             if (data) {
                 setVisibleSongs(new Set(data.songs.map((song: SongType) => song.id)));
+                setPlaylistName(data.mood.name);
             }
         }
     }, [id, getPlaylistById]);
@@ -61,8 +63,13 @@ const Playlist = () => {
 
             <div className={styles.playlistContent}>
                 <div className={styles.playlistHeader}>
-                    <h1 className={styles.playlistTitle}>Meu mood é: {playlist.mood.name}</h1>
+                    <h1 className={styles.playlistTitle}>Meu <i>mood</i> é: <span>{playlistName}</span></h1>
                 </div>
+                
+                <PlaylistActions
+                    playlistId={playlist.id}
+                    playlistName={playlistName}
+                />
 
                 <div className={styles.cardsGrid}>
                     {playlist.songs.filter(song => visibleSongs.has(song.id)).length === 0 ?

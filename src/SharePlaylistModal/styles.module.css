@@ -1,0 +1,181 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modalContent {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.modalHeader h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.closeButton:hover {
+  color: #333;
+}
+
+.modalBody {
+  padding: 24px;
+}
+
+.playlistInfo {
+  margin: 0 0 20px 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.playlistInfo strong {
+  color: #333;
+}
+
+.permissionSection {
+  margin-bottom: 20px;
+}
+
+.permissionSection label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+.permissionSelect {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #333;
+  background-color: white;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.permissionSelect:hover,
+.permissionSelect:focus {
+  outline: none;
+  border-color: #9c55bd;
+}
+
+.linkSection {
+  margin-bottom: 20px;
+}
+
+.linkSection label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+.linkContainer {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.linkInput {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: #666;
+  background-color: #f9f9f9;
+  font-family: monospace;
+}
+
+.linkInput:focus {
+  outline: none;
+  border-color: #9c55bd;
+  background-color: white;
+}
+
+.copyButton {
+  padding: 10px 16px;
+  background-color: #9c55bd;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.copyButton:hover {
+  background-color: #8a4999;
+}
+
+.copyButton:active {
+  transform: scale(0.98);
+}
+
+.helpText {
+  margin: 16px 0 0 0;
+  font-size: 0.85rem;
+  color: #999;
+}
+
+.modalFooter {
+  padding: 16px 24px;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.closeActionButton {
+  padding: 10px 24px;
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.closeActionButton:hover {
+  background-color: #e0e0e0;
+}
