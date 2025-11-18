@@ -1,0 +1,19 @@
+.playlistHeader {
+    width: 100%;
+    margin-bottom: 40px;
+}
+.playlistTitle {
+    color: rgb(0, 0, 0);
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+}
+
+.cardsGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+}
