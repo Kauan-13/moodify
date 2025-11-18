@@ -8,22 +8,23 @@
     align-items: center;
     gap: 24px;
 
-    background-color: #E3E3E3;
+    background-color: var(--botoes-roxo-fraco);
     border-radius: 4rem;
     padding: 12px 32px;
 
     cursor: pointer;
+
 
     transition: all .1s ease-in-out;
     height: 72px;
 }
 
 .button:hover {
-    background-color: #d1d1d1;
+    background-color: var(--roxo-hover-claro);;
 }
 
 .button:active {
-    background-color: rgb(179, 179, 179)
+    background-color: (var(--roxo-hover-claro));
 }
 
 .button p {

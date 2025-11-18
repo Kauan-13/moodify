@@ -1,3 +1,4 @@
+
 .cardMusic {
     position: relative;
     width: 50vw;
@@ -7,7 +8,9 @@
     justify-content: space-between;
     padding-left: 20px;
     padding-right: 20px;
-    background-color: #F2F2F2;
+
+    background-color: var(--fundo-secundario);
+
     border-radius: 10px;
     user-select: none;
     transition: all 0.3s ease;
@@ -110,7 +113,7 @@
     padding-left: 10px;
 
     font-size: 35px;
-    color: #6B6B6B;
+    color: #b5aeb6;
     text-align: end;
 }
 
@@ -125,5 +128,5 @@
 
 
 .liked {
-    color: black;
+    color: var(--botoes-roxo-forte);
 }

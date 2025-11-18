@@ -2,6 +2,15 @@
 
 :root {
   font-family: 'Poppins', Helvetica, Arial, sans-serif;
+  --lilas-escuro: #9350ad;
+  --lilas-playlists: #9c55bd;
+  --fundo-principal:rgb(245, 230, 250);
+  --fundo-secundario: rgb(234, 213, 241);
+  --botoes-roxo-forte: #8a3dbb;
+  --botoes-roxo-fraco: #e2bef8;
+  --roxo-hover-escuro: #642792;
+  --roxo-hover-claro: #c39ddb;
+  --branco: #ffff;
 }
 
 * {
@@ -17,6 +26,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color:  var(--fundo-principal);
 }
 
 .titleSearch{

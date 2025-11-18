@@ -1,9 +1,34 @@
+
+
+/* 
+Salvar cores:
+roxo vibrante legal: 8539a3 
+rixi playlist: 74318f
+
+roxo-claro-img: bfa3d9
+roxo-escuro-img: a383b6
+
+roxo acizentado: 6E5B84
+roxo pastel escuro: 8B7A98
+
+legal2: rgb(126, 93, 145)
+8b72ac
+
+sidebar MUITO BOA: 7C6A94
+8B78A9
+
+mlr ate agora 
+  --lilas-escuro: #9350ad;
+  --lilas-playlists: #9c55bd
+  --branco: #ffff;
+*/
+
 .sidebar {
   height: 100vh;
   width: 120px;
   position: fixed;
-  background-color: #f2f2f2;
-  color: black;
+  background-color: var(--lilas-escuro);
+  color: var(--branco);
   left: 0;
   top: 0;
   transition: width 0.3s ease;
@@ -48,7 +73,7 @@
 
 .soundwave span {
   width: 3px;
-  background-color: black;
+  background-color: var(--branco);
   border-radius: 2px;
   animation: wave 1s ease-in-out infinite;
 }
@@ -163,7 +188,7 @@
 }
 
 .playlists {
-  background-color: #e9e9e9;
+  background-color: var(--lilas-playlists);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -203,7 +228,7 @@
 
 .playlists li p {
   font-size: 14px;
-  color: #333;
+  color: var(--branco);
   margin: 0;
   opacity: 1;
   visibility: visible;
@@ -211,7 +236,7 @@
 
 .link {
   text-decoration: none;
-  color: black;
+  color: var(--branco);
   display: flex;
   gap: 20px;
   align-items: center;
