@@ -1,28 +1,59 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import Sidebar from "../Sidebar";
 import CardMusic from "../CardMusic";
 import LoginPopup from "../LoginPopup";
 import styles from "./styles.module.css";
 import { useAuth } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { type Playlist as PlaylistType, type Song as SongType } from "../../types/playlist";
+import { usePlaylists } from "../../contexts/PlaylistContext";
 
 const Playlist = () => {
     const [showPopup, setShowPopup] = useState(false);
-    const [showMusic1, setShowMusic1] = useState(true);
-    const [showMusic2, setShowMusic2] = useState(true);
-    const [showMusic3, setShowMusic3] = useState(true);
-
-    const [playing, setPlaying] = useState(-1);
+    const [playlist, setPlaylist] = useState<PlaylistType | null>(null);
+    const [visibleSongs, setVisibleSongs] = useState<Set<string>>(new Set());
+    const [playing, setPlaying] = useState<string | null>(null);
 
     const navigate = useNavigate();
     const { user } = useAuth();
+    const { id } = useParams<{ id: string }>();
+    const { getPlaylistById } = usePlaylists();
+
+    useEffect(() => {
+        if (id) {
+            const data = getPlaylistById(id);
+            setPlaylist(data);
+            if (data) {
+                setVisibleSongs(new Set(data.songs.map((song: SongType) => song.id)));
+            }
+        }
+    }, [id, getPlaylistById]);
 
     const handleProfileClick = () => {
         if (user !== null && user !== undefined )
             navigate('/profile');
-
         else setShowPopup(true);
     };
+
+    const handleDeleteSong = (songId: string) => {
+        setVisibleSongs(prev => {
+            const newSet = new Set(prev);
+            newSet.delete(songId);
+            return newSet;
+        });
+    };
+
+    if (!playlist) {
+        return (
+            <main className={styles.playlistContainer}>
+                <Sidebar onClick={() => handleProfileClick()} />
+                <div className={styles.playlistContent}>
+                    <p>Carregando Músicas...</p>
+                </div>
+            </main>
+        );
+    }
 
     return (
         <main className={styles.playlistContainer}>
@@ -30,50 +61,25 @@ const Playlist = () => {
 
             <div className={styles.playlistContent}>
                 <div className={styles.playlistHeader}>
-
-                    <h1 className={styles.playlistTitle}>Menu mood é: pipi pópó pipi pópó</h1>
-
+                    <h1 className={styles.playlistTitle}>Meu mood é: {playlist.mood.name}</h1>
                 </div>
 
                 <div className={styles.cardsGrid}>
-                    {showMusic1 && (
+                    {playlist.songs.filter(song => visibleSongs.has(song.id)).length === 0 ?
+                    ( <p className={styles.playlistEmpty} >Você deletou todas as músicas desta playlist...</p> )
+                    : playlist.songs.filter(song => visibleSongs.has(song.id)).map((song) => (
                         <CardMusic
-                            musicName={`Something Stupid (From "Better Call Saul")`}
-                            albumName={`Something Stupid (From "Better Call Saul")`}
-                            albumImage="./album.jpg"
-                            player="Lola Marsh"
-                            year={2018}
-                            playing={playing == 1 ? true : false}
-                            onDelete={() => setShowMusic1(false)}
-                            onPlay={() => { setPlaying(prev => prev != 1 ? 1 : -1) }}
+                            key={song.id}
+                            musicName={song.name}
+                            albumName={song.album}
+                            albumImage={song.coverUrl}
+                            player={song.artist}
+                            year={song.year}
+                            playing={playing === song.id}
+                            onDelete={() => handleDeleteSong(song.id)}
+                            onPlay={() => setPlaying(prev => prev !== song.id ? song.id : null)}
                         />
-                    )}
-
-                    {showMusic2 && (
-                        <CardMusic
-                            musicName={`The Fate Of Ophelia`}
-                            albumName={`The Life of a Showgirl`}
-                            albumImage="./album1.jpg"
-                            player="Taylor Swift"
-                            year={2025}
-                            playing={playing == 2 ? true : false}
-                            onDelete={() => setShowMusic2(false)}
-                            onPlay={() => { setPlaying(prev => prev != 2 ? 2 : -1) }}
-                        />
-                    )}
-
-                    {showMusic3 && (
-                        <CardMusic
-                            musicName={`Come Over`}
-                            albumName={`HOT`}
-                            albumImage="./album2.png"
-                            player="LE SSERAFIM"
-                            year={2024}
-                            playing={playing == 3 ? true : false}
-                            onDelete={() => setShowMusic3(false)}
-                            onPlay={() => { setPlaying(prev => prev != 3 ? 3 : -1) }}
-                        />
-                    )}
+                    ))}
                 </div>
             </div>
 

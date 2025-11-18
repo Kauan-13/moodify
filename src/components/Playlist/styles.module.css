@@ -17,3 +17,9 @@
     width: 100%;
     align-items: center;
 }
+
+.playlistEmpty {
+    font-weight: 400;
+    font-size: 20px;
+    opacity: 60%;
+}

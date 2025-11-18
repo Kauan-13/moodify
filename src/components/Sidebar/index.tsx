@@ -3,14 +3,15 @@ import style from "./style.module.css"
 import { IoIosArrowForward, IoIosArrowBack, IoIosHelpCircle } from "react-icons/io";
 import { MdOutlineLibraryAdd, MdPlaylistPlay, MdAccountCircle } from "react-icons/md";
 import { Link } from "react-router-dom";
+import type { Playlist as PlaylistType } from "../../types/playlist";
+import { usePlaylists } from "../../contexts/PlaylistContext";
 
 interface SidebarProps { onClick: () => void }
 
 const Sidebar = ({ onClick }: SidebarProps) => {
     const [isOpen, setIsOpen] = useState(false)
     const [isPlaylistOpen, setIsPlaylistOpen] = useState(false)
-
-    const playlists = ["fav da sofia 2.0", "melhores da loirah", "fav da sofia", "pipi pôpô pipi pôpô"]
+    const { playlists } = usePlaylists();
 
     return (
         <div className={`${style.sidebar} ${isOpen ? style.open : " "}`}>
@@ -58,13 +59,20 @@ const Sidebar = ({ onClick }: SidebarProps) => {
                     {isPlaylistOpen && (
                         <li>
                             <div className={`${style.playlists} ${isOpen ? style.show : ''}`}>
-                                {playlists.map((playlist, index) => (
-                                    <li key={index}>
-                                        <Link to={"/playlist"} className={style.link}>
-                                            <p>{playlist}</p>
-                                        </Link>
+                                {playlists && playlists.length == 0 ? 
+                                (
+                                    <li className={style.emptyPlaceholder}>
+                                        <p>Nenhuma Playlist</p>
                                     </li>
-                                ))}
+                                ) : (
+                                    playlists.map((playlist: PlaylistType) => (
+                                        <li key={playlist.id}>
+                                            <Link to={`/playlist/${playlist.id}`} className={style.link}>
+                                                <p>{playlist.mood.name}</p>
+                                            </Link>
+                                        </li>
+                                    ))
+                                )}
                             </div>
                         </li>
                     )}

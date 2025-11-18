@@ -144,3 +144,8 @@
     text-decoration: none;
     color: black;
 }
+
+.profilePlaylistCard:hover .playlistName,
+.profilePlaylistCard:hover .playlistSongs {
+    text-decoration: underline;
+}

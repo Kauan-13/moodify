@@ -5,54 +5,14 @@ import style from "./style.module.css";
 import { MdAccountCircle, MdLogout, MdSync } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
+import type { Playlist as PlaylistType, Song as SongType } from "../../types/playlist";
+import { usePlaylists } from "../../contexts/PlaylistContext";
 
 const ProfilePage = () => {
     const [showPopup, setShowPopup] = useState(false);
     const { user, logout } = useAuth();
     const navigate = useNavigate();
-
-    const playlists = [
-        {
-            name: "fav da sofia",
-            songs: 4,
-            covers: [
-                "./album.jpg",
-                "./album.jpg",
-                "./album.jpg",
-                "./album.jpg",
-            ]
-        },
-        {
-            name: "melhores da loirah",
-            songs: 4,
-            covers: [
-                "./album.jpg",
-                "./album.jpg",
-                "./album.jpg",
-                "./album.jpg",
-            ]
-        },
-        {
-            name: "fav da sofia 2.0",
-            songs: 4,
-            covers: [
-                "./album.jpg",
-                "./album.jpg",
-                "./album.jpg",
-                "./album.jpg",
-            ]
-        },
-        {
-            name: "pipi pôpô pipi pôpô",
-            songs: 4,
-            covers: [
-                "./album.jpg",
-                "./album.jpg",
-                "./album.jpg",
-                "./album.jpg",
-            ]
-        }
-    ];
+    const { playlists } = usePlaylists();
 
     const handleLogout = () => {
         logout();
@@ -76,33 +36,38 @@ const ProfilePage = () => {
                 </div>
                 
                 <div className={style.actionButtons} >
-
-                        <button onClick={() => setShowPopup(true)} className={style.syncButton}>
-                            <MdSync />
-                            <span>Sincronizar Outro Streaming</span>
-                        </button>
-                        <button className={style.logoutButton} onClick={handleLogout}>
-                            <MdLogout />
-                            <span>Logout</span>
-                        </button>
-
+                    <button onClick={() => setShowPopup(true)} className={style.syncButton}>
+                        <MdSync />
+                        <span>Sincronizar Outro Streaming</span>
+                    </button>
+                    <button className={style.logoutButton} onClick={handleLogout}>
+                        <MdLogout />
+                        <span>Logout</span>
+                    </button>
                 </div>
             </div>
 
             <div className={style.profilePlaylists} >
+                {playlists.map((playlist: PlaylistType) => {
+                    
+                    const availableCovers = playlist.songs.map((song: SongType) => song.coverUrl).filter(Boolean);
 
-                {
-                    playlists.map((playlist, index) => (
-                        <div key={index} className={style.profilePlaylistCard} >
-                            <Link to='/playlist' className={style.playlistCover}>
-                                {playlist.covers.map((cover, idx) => ( <img key={idx} src={cover || "/placeholder.svg"} alt={cover} /> ))}
+                    const covers = availableCovers.length > 0 
+                        ? Array(4).fill(null).map((_, i) => availableCovers[i % availableCovers.length])
+                        : Array(4).fill("/placeholder.svg");
+
+                    return (
+                        <div key={playlist.id} className={style.profilePlaylistCard} >
+                            <Link to={`/playlist/${playlist.id}`} className={style.playlistCover}>
+                                {covers.map((cover, idx) => ( 
+                                    <img key={idx} src={cover} alt={`Cover ${idx + 1}`} /> 
+                                ))}
                             </Link>
-                            <Link to='/playlist' className={style.playlistName} >{playlist.name}</Link>
-                            <Link to='/playlist' className={style.playlistSongs} >{playlist.songs} músicas</Link>
+                            <Link to={`/playlist/${playlist.id}`} className={style.playlistName} >{playlist.mood.name}</Link>
+                            <Link to={`/playlist/${playlist.id}`} className={style.playlistSongs} >{playlist.songs.length} músicas</Link>
                         </div>
-                    ))   
-                }
-
+                    );
+                })}
             </div>
 
             {showPopup && <LoginPopup onClose={() => setShowPopup(false)} />}

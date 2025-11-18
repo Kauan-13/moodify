@@ -193,17 +193,14 @@ mlr ate agora
   display: flex;
   flex-direction: column;
   padding: 15px 20px;
-  width: auto !important;
-  height: auto !important;
   gap: 0;
-  margin-top: 100px;
-  margin-left: 5px;
-  width: 150px;
+  margin-top: 50%;
   opacity: 0;
   max-height: 0;
   transform: translateY(-10px);
   transition: opacity 0.25s ease, max-height 0.3s ease, transform 0.25s ease;
   overflow: hidden;
+  width: 85%;
 }
 
 .playlists.show {
@@ -244,4 +241,19 @@ mlr ate agora
 
 .threeFirstButtons > p {
   margin-bottom: 8px;
+}
+
+.emptyPlaceholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    /* padding: 8px 0; */
+
+    opacity: 60%;
+}
+
+.emptyPlaceholder p {
+  font-weight: 300;
+    cursor: default;
 }
