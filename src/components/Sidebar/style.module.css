@@ -33,6 +33,7 @@ mlr ate agora
   top: 0;
   transition: width 0.3s ease;
   overflow: hidden;
+  user-select: none;
 }
 
 .open {
@@ -120,6 +121,12 @@ mlr ate agora
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+.form_icon {
+  position: absolute;
+  bottom: 150px;
+  left: 40px;
 }
 
 .account_icon {

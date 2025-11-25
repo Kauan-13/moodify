@@ -5,6 +5,7 @@ import { MdOutlineLibraryAdd, MdPlaylistPlay, MdAccountCircle } from "react-icon
 import { Link } from "react-router-dom";
 import type { Playlist as PlaylistType } from "../../types/playlist";
 import { usePlaylists } from "../../contexts/PlaylistContext";
+import { SiGoogleforms } from "react-icons/si";
 
 interface SidebarProps { onClick: () => void }
 
@@ -35,7 +36,7 @@ const Sidebar = ({ onClick }: SidebarProps) => {
                         }}
                     >
                         <span> {isOpen ? <IoIosArrowBack /> :  <IoIosArrowForward /> }</span>
-                        <p>{isOpen ? "Fechar" : "Abrir"}</p>
+                        <p>{isOpen ? "Fechar" : "Fechar"}</p>
                     </li>
 
                     <li  className={style.threeFirstButtons}>
@@ -76,6 +77,13 @@ const Sidebar = ({ onClick }: SidebarProps) => {
                             </div>
                         </li>
                     )}
+
+                    <li className={style.form_icon}>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdeyyF-rQLmpAdNP-PhHNq-KxzC0pY4T5a3Fqyx1xLpZtaJRw/viewform?usp=dialog" target="_blank" className={style.link}>
+                            <SiGoogleforms></SiGoogleforms>
+                            <p>Questionário</p>
+                        </a>
+                    </li>
 
                     <li className={style.account_icon} onClick={onClick}>
                         <MdAccountCircle></MdAccountCircle>
