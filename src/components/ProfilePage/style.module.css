@@ -1,4 +1,3 @@
-
 .profile {
     flex-direction: column;
     gap: 32px;
@@ -65,21 +64,21 @@
 }
 
 .syncButton {
-    background-color: var(--botoes-roxo-forte);
-    color: #fff;
+    background-color: var(--theme-primary);
+    color: var(--theme-background);
 }
 
 .syncButton:hover {
-    background-color: var(--roxo-hover-escuro);
+    background-color: var(--theme-accent);
 }
 
 .logoutButton {
-    background-color: var(--botoes-roxo-fraco);
-    color: #333;
+    background-color: var(--theme-primary-light);
+    color: var(--theme-text);
 }
 
 .logoutButton:hover {
-    background-color:  #c9a3e0;
+    background-color: var(--theme-primary-light);
 }
 
 .profilePlaylists {
@@ -88,7 +87,7 @@
     gap: 24px;
     text-align: center;
 
-    background-color: var(--fundo-secundario);
+    background-color: var(--theme-background-alt);
     padding: 32px;
     border-radius: 8px;
 
@@ -134,15 +133,14 @@
 .playlistName {
     font-weight: 600;
     font-size: 16px;
-
     text-decoration: none;
-    color: black;
+    color: var(--theme-text);
 }
+
 .playlistSongs {
     opacity: 60%;
-
     text-decoration: none;
-    color: black;
+    color: var(--theme-text);
 }
 
 .profilePlaylistCard:hover .playlistName,

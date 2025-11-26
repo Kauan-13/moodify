@@ -14,23 +14,23 @@
   height: 40px;
   border: none;
   background-color: transparent;
-  color: #333;
+  color: var(--theme-text);
   cursor: pointer;
   border-radius: 6px;
   transition: all 0.2s ease;
 }
 
 .actionButton:hover {
-  background-color: var(--roxo-hover-escuro);
-  color: white;
+  background-color: var(--theme-accent);
+  color: var(--theme-background);
 }
 
 .successNotification {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #4caf50;
-  color: white;
+  background-color: var(--theme-accent);
+  color: var(--theme-background);
   padding: 16px 24px;
   border-radius: 8px;
   font-weight: 500;

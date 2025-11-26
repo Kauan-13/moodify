@@ -22,7 +22,7 @@ input[type=number]::-webkit-inner-spin-button {
     padding-top: 5px;
     padding-left: 10px;
     padding-right: 90px;
-    border: 1px solid #9a0095;
+    border: 1px solid var(--theme-primary);
     border-radius: 8px;
     font-size: 14px;
 }
@@ -36,18 +36,18 @@ input[type=number]::-webkit-inner-spin-button {
     border-radius: 10px;
 
     font-size: 14px;
-    background-color: white;
-    color: #9a0095;
+    background-color: var(--theme-background);
+    color: var(--theme-primary);
 }
 
 .timeInput > span {
     position: absolute;
     top: 14px;
     right: 10px;
-    color: #9a0095;
+    color: var(--theme-primary);
     pointer-events: none;
 }
 
 .input:focus + span {
-    color: #9a0095;
+    color: var(--theme-primary);
 }
