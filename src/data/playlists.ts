@@ -136,7 +136,7 @@ export const playlistsData: Playlist[] = [
   {
     id: "5",
     mood: {
-      name: "Star",
+      name: "Alone in space",
       colors: ["#232c53ff", "#304ba5ff"],
     },
     songs: [
