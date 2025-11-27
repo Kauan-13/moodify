@@ -70,7 +70,7 @@
 }
 
 .cardMusic:hover > .albumImage > .icon {
-    color: var(--theme-text);
+    color: white;
 }
 
 .musicInfo {
