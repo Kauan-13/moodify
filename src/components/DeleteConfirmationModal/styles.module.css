@@ -12,7 +12,7 @@
 }
 
 .modal {
-  background-color: white;
+  background-color: var(--theme-background);
   border-radius: 8px;
   padding: 32px;
   max-width: 400px;
@@ -24,13 +24,13 @@
   margin: 0 0 16px 0;
   font-size: 20px;
   font-weight: 600;
-  color: #333;
+  color: var(--theme-text);
 }
 
 .message {
   margin: 0 0 24px 0;
   font-size: 14px;
-  color: #666;
+  color: var(--theme-text-secondary);
   line-height: 1.5;
 }
 
@@ -42,34 +42,34 @@
 
 .cancelButton {
   padding: 10px 20px;
-  background-color: #f0f0f0;
+  background-color: var(--theme-background-alt);
   border: none;
   border-radius: 4px;
   font-size: 14px;
   font-weight: 500;
-  color: #333;
+  color: var(--theme-text);
   cursor: pointer;
   transition: background-color 0.2s;
 }
 
 .cancelButton:hover {
-  background-color: #e0e0e0;
+  background-color: var(--theme-border);
 }
 
 .confirmButton {
   padding: 10px 20px;
-  background-color: #ff4444;
+  background-color: var(--theme-accent);
   border: none;
   border-radius: 4px;
   font-size: 14px;
   font-weight: 500;
-  color: white;
+  color: var(--theme-background);
   cursor: pointer;
   transition: background-color 0.2s;
 }
 
 .confirmButton:hover {
-  background-color: #cc0000;
+  background-color: var(--theme-primary);
 }
 
 .cancelButton:disabled,
@@ -79,5 +79,5 @@
 }
 
 .confirmButton:disabled:hover {
-  background-color: #ff4444;
+  background-color: var(--theme-accent);
 }

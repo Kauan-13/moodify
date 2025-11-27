@@ -1,4 +1,3 @@
-
 .button {
     outline: none;
     offset: none;
@@ -8,23 +7,22 @@
     align-items: center;
     gap: 24px;
 
-    background-color: var(--botoes-roxo-fraco);
+    background-color: var(--theme-background-alt);
     border-radius: 4rem;
     padding: 12px 32px;
 
     cursor: pointer;
-
 
     transition: all .1s ease-in-out;
     height: 72px;
 }
 
 .button:hover {
-    background-color: var(--roxo-hover-claro);;
+    background-color: var(--theme-border);
 }
 
 .button:active {
-    background-color: (var(--roxo-hover-claro));
+    background-color: var(--theme-accent);
 }
 
 .button p {

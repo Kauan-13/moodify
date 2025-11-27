@@ -2,16 +2,16 @@
     position: relative;
     width: 100%;
     max-width: 640px;
-    background: #ffffff;
-    border: 1px solid #9a0095;
+    background: var(--theme-background);
+    border: 1px solid var(--theme-primary);
     border-radius: 12px;
     padding: 16px 20px;
     transition: all 200ms ease-in-out;
 }
 
 .searchBar:focus-within {
-    border-color: #9a0095;
-    box-shadow: 0 4px 10px rgba(154, 0, 149, .25);
+    border-color: var(--theme-primary);
+    box-shadow: 0 4px 10px var(--theme-primary)40;
 }
 
 /* Added flex container for input and button */
@@ -26,22 +26,22 @@
     flex: 1;
     height: 32px;
     border: none;
-    background: transparent;
-    color: #000;
+    color: var(--theme-text);
     font-size: 16px;
     padding: 0;
     outline: none;
 }
 
 .searchInput::placeholder {
-    color: #666;
+    color: var(--theme-text-secondary);
     font-weight: 300;
 }
 
+
 .enterButton {
     padding: 14px 16px;
-    background-color: #9a0095;
-    color: #ffffff;
+    background-color: var(--theme-primary);
+    color: var(--theme-background);
     border: none;
     border-radius: 6px;
     font-size: 14px;
@@ -52,7 +52,7 @@
 }
 
 .enterButton:hover {
-    background-color: #7a006f;
+    background-color: var(--theme-accent);
 }
 
 .filterActions {
@@ -62,5 +62,5 @@
     gap: 8px;
     margin-top: 16px;
     padding-top: 16px;
-    border-top: 1px solid #9a0095;
+    border-top: 1px solid var(--theme-primary);
 }

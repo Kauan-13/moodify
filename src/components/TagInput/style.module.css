@@ -11,7 +11,6 @@
 
   min-height: 36px;
   width: 100%;
-
 }
 
 .tag {
@@ -19,8 +18,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #9a0095;
-  color: white;
+  background: var(--theme-primary);
+  color: var(--theme-background);
   padding: 6px 8px 6px 20px;
   gap: 8px;
   font-size: 14px;
@@ -31,7 +30,7 @@
   border: none;
   outline: none;
   offset: none;
-  color: white;
+  color: var(--theme-background);
   font-size: 25px;
   cursor: pointer;
   padding: 0px 8px;
@@ -40,14 +39,12 @@
 .tagsContainer input {
   outline: none;
   border: none;
-  background-color: white;
-  line-height: 150%;
-  color: black;
+  color: var(--theme-text);
   font-size: 16px;
   padding: 14px 16px 6px 16px;
   width: 100%;
 
-  border: 1px solid #9a0095;
+  border: 1px solid var(--theme-primary);
   border-radius: 8px;
 }
 
@@ -57,9 +54,9 @@
   top: 0%;
   transform: translateY(-50%);
   user-select: none;
-  background-color: white;
+  background-color: var(--theme-background);
   padding: 0 6px;
-  color: #9a0095;
+  color: var(--theme-primary);
   pointer-events: none;
   font-size: 14px;
   border-radius: 10px;
@@ -67,7 +64,7 @@
 }
 
 .hint {
-  color: black;
+  color: var(--theme-text);
   opacity: 60%;
   font-size: 12px;
   margin: 8px 0px 0px 12px;

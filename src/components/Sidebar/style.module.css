@@ -1,34 +1,9 @@
-
-
-/* 
-Salvar cores:
-roxo vibrante legal: 8539a3 
-rixi playlist: 74318f
-
-roxo-claro-img: bfa3d9
-roxo-escuro-img: a383b6
-
-roxo acizentado: 6E5B84
-roxo pastel escuro: 8B7A98
-
-legal2: rgb(126, 93, 145)
-8b72ac
-
-sidebar MUITO BOA: 7C6A94
-8B78A9
-
-mlr ate agora 
-  --lilas-escuro: #9350ad;
-  --lilas-playlists: #9c55bd
-  --branco: #ffff;
-*/
-
 .sidebar {
   height: 100vh;
   width: 120px;
   position: fixed;
-  background-color: var(--lilas-escuro);
-  color: var(--branco);
+  background-color: var(--theme-primary);
+  color: var(--theme-background);
   left: 0;
   top: 0;
   transition: width 0.3s ease;
@@ -52,7 +27,6 @@ mlr ate agora
 .logo p {
   margin: 0;
   white-space: nowrap;
-  /* Add opacity transition with delay for smooth text appearance */
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.2s ease 0s, visibility 0s 0.3s;
@@ -74,7 +48,7 @@ mlr ate agora
 
 .soundwave span {
   width: 3px;
-  background-color: var(--branco);
+  background-color: var(--theme-background);
   border-radius: 2px;
   animation: wave 1s ease-in-out infinite;
 }
@@ -105,15 +79,8 @@ mlr ate agora
 }
 
 @keyframes wave {
-
-  0%,
-  100% {
-    transform: scaleY(1);
-  }
-
-  50% {
-    transform: scaleY(1.5);
-  }
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.5); }
 }
 
 .icons {
@@ -171,10 +138,10 @@ mlr ate agora
   transition: opacity 0.2s ease 0s, visibility 0s 0.3s;
 }
 
-
 .open .icons > li > p,
 .open .icons > li > .link > p {
   opacity: 1;
+
   visibility: visible;
   transition: opacity 0.2s ease 0.2s, visibility 0s 0s;
 }
@@ -187,6 +154,7 @@ mlr ate agora
   opacity: 1 !important;
   visibility: visible !important;
   transition: none !important;
+  
 }
 
 .icons li > span > svg {
@@ -195,7 +163,7 @@ mlr ate agora
 }
 
 .playlists {
-  background-color: var(--lilas-playlists);
+  background-color: var(--theme-primary-light);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -232,7 +200,7 @@ mlr ate agora
 
 .playlists li p {
   font-size: 14px;
-  color: var(--branco);
+  color: var(--theme-primary);
   margin: 0;
   opacity: 1;
   visibility: visible;
@@ -240,7 +208,7 @@ mlr ate agora
 
 .link {
   text-decoration: none;
-  color: var(--branco);
+  color: var(--theme-background);
   display: flex;
   gap: 20px;
   align-items: center;
@@ -251,16 +219,14 @@ mlr ate agora
 }
 
 .emptyPlaceholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50px;
-    /* padding: 8px 0; */
-
-    opacity: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  opacity: 60%;
 }
 
 .emptyPlaceholder p {
   font-weight: 300;
-    cursor: default;
+  cursor: default;
 }
