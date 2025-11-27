@@ -20,8 +20,8 @@ interface Theme {
 }
 const moodThemes: Record<string, Theme> = {
   default: {
-    primary: "#1A1A1A",
-    primaryLight: "#E0E0E0", 
+    primary: "#101010",
+    primaryLight: "#E0E0E0",
     background: "#FFFFFF",
     backgroundAlt: "#FAFAFA",
     text: "#1A1A1A",
@@ -30,8 +30,8 @@ const moodThemes: Record<string, Theme> = {
     accent: "#333333",
   },
   feliz: {
-    primary: "#FFD700",
-    primaryLight: "#FFECB3", 
+    primary: "#E6C200",
+    primaryLight: "#FFECB3",
     background: "#FFFEF7",
     backgroundAlt: "#FFF9E6",
     text: "#1A1A1A",
@@ -40,8 +40,8 @@ const moodThemes: Record<string, Theme> = {
     accent: "#FFA726",
   },
   triste: {
-    primary: "#4A90E2",
-    primaryLight: "#C7E0F8", 
+    primary: "#4078C0",
+    primaryLight: "#C7E0F8",
     background: "#F5F9FC",
     backgroundAlt: "#EBF5FB",
     text: "#1A1A1A",
@@ -50,8 +50,8 @@ const moodThemes: Record<string, Theme> = {
     accent: "#2196F3",
   },
   calmo: {
-    primary: "#81C784",
-    primaryLight: "#D1EAD8", 
+    primary: "#6DA66A",
+    primaryLight: "#D1EAD8",
     background: "#F9FBF9",
     backgroundAlt: "#F1F8F4",
     text: "#1A1A1A",
@@ -60,8 +60,8 @@ const moodThemes: Record<string, Theme> = {
     accent: "#66BB6A",
   },
   energético: {
-    primary: "#FF5722",
-    primaryLight: "#FFD1C3", 
+    primary: "#E64A1C",
+    primaryLight: "#FFD1C3",
     background: "#FFF8F6",
     backgroundAlt: "#FFEBE5",
     text: "#1A1A1A",
@@ -70,7 +70,7 @@ const moodThemes: Record<string, Theme> = {
     accent: "#FF7043",
   },
   romântico: {
-    primary: "#EC407A",
+    primary: "#D6366A",
     primaryLight: "#F8D6E0",
     background: "#FFF5F8",
     backgroundAlt: "#F8E1EB",
@@ -80,8 +80,8 @@ const moodThemes: Record<string, Theme> = {
     accent: "#E91E63",
   },
   nostálgico: {
-    primary: "#9575CD",
-    primaryLight: "#DDD0ED", 
+    primary: "#8560B0",
+    primaryLight: "#DDD0ED",
     background: "#FAF9FC",
     backgroundAlt: "#F3EDF7",
     text: "#1A1A1A",
@@ -90,8 +90,8 @@ const moodThemes: Record<string, Theme> = {
     accent: "#7E57C2",
   },
   animado: {
-    primary: "#FF9800",
-    primaryLight: "#FFE0B2", 
+    primary: "#E68900",
+    primaryLight: "#FFE0B2",
     background: "#FFFBF5",
     backgroundAlt: "#FFF4E1",
     text: "#1A1A1A",
@@ -100,8 +100,8 @@ const moodThemes: Record<string, Theme> = {
     accent: "#FB8C00",
   },
   relaxado: {
-    primary: "#26A69A",
-    primaryLight: "#C1E4E0", 
+    primary: "#219087",
+    primaryLight: "#C1E4E0",
     background: "#F7FCFC",
     backgroundAlt: "#E8F5F4",
     text: "#1A1A1A",
@@ -110,8 +110,8 @@ const moodThemes: Record<string, Theme> = {
     accent: "#00897B",
   },
   frio: {
-    primary: "#03A9F4",
-    primaryLight: "#B3E5FC", 
+    primary: "#0288C9",
+    primaryLight: "#B3E5FC",
     background: "#F3FAFD",
     backgroundAlt: "#E0F3FA",
     text: "#0D47A1",
@@ -120,8 +120,8 @@ const moodThemes: Record<string, Theme> = {
     accent: "#0288D1",
   },
   raiva: {
-    primary: "#D32F2F",
-    primaryLight: "#FFBABA", 
+    primary: "#B71C1C",
+    primaryLight: "#FFBABA",
     background: "#FFF5F5",
     backgroundAlt: "#FFEDED",
     text: "#1A1A1A",
@@ -130,8 +130,8 @@ const moodThemes: Record<string, Theme> = {
     accent: "#E53935",
   },
   natural: {
-    primary: "#8D6E63",
-    primaryLight: "#CFC0BA", 
+    primary: "#755547",
+    primaryLight: "#CFC0BA",
     background: "#FAF6F3",
     backgroundAlt: "#EFE7E2",
     text: "#3E2723",
@@ -140,8 +140,8 @@ const moodThemes: Record<string, Theme> = {
     accent: "#795548",
   },
   esperançoso: {
-    primary: "#FFB74D",
-    primaryLight: "#FFE0B2", 
+    primary: "#E69C3B",
+    primaryLight: "#FFE0B2",
     background: "#FFF8ED",
     backgroundAlt: "#FFF1DB",
     text: "#1A1A1A",
@@ -150,7 +150,7 @@ const moodThemes: Record<string, Theme> = {
     accent: "#FFA726",
   },
   solitario: {
-    primary: "#90A4AE",
+    primary: "#7A8B97",
     primaryLight: "#B0BEC5",
     background: "#ECEFF1",
     backgroundAlt: "#E0E3E5",
@@ -160,8 +160,8 @@ const moodThemes: Record<string, Theme> = {
     accent: "#78909C",
   },
   criativo: {
-    primary: "#AB47BC",
-    primaryLight: "#D8B2DE", 
+    primary: "#9737A9",
+    primaryLight: "#D8B2DE",
     background: "#FDF7FF",
     backgroundAlt: "#F7ECFA",
     text: "#1A1A1A",
