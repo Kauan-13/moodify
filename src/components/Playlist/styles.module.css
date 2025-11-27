@@ -18,6 +18,7 @@
 
 .playlistTitle span {
     font-weight: 400;
+    color: var(--theme-primary);
 }
 
 .cardsGrid {

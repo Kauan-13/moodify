@@ -19,7 +19,7 @@ const SearchBar = ({ onClick, isClicked, min, max }: Props) => {
     const [searchInput, setSearchInput] = useState<string>("");
     const navigate = useNavigate();
     const { playlists } = usePlaylists();
-    const { currentTheme, setMood } = useTheme(); // 🔹 pegando setMood
+    const { currentTheme, setMood } = useTheme(); 
 
     const handleEnterClick = () => {
         if (playlists.length > 0 && searchInput.trim()) {
@@ -35,14 +35,14 @@ const SearchBar = ({ onClick, isClicked, min, max }: Props) => {
         setMood(value);          // atualiza mood -> altera tema
     };
 
-    // Estilos inline dinâmicos
+    // estilos inline dinâmicos
     const searchBarStyle = {
         backgroundColor: currentTheme.backgroundAlt,
         borderColor: currentTheme.primary
     };
 
     const inputStyle = {
-        backgroundColor: currentTheme.background,
+        backgroundColor: currentTheme.backgroundAlt,
         color: currentTheme.text,
         borderColor: currentTheme.primary
     };
@@ -63,7 +63,7 @@ const SearchBar = ({ onClick, isClicked, min, max }: Props) => {
                     className={style.searchInput}
                     style={inputStyle}
                     value={searchInput}
-                    onChange={handleInputChange}   // 🔹 aqui usamos handleInputChange
+                    onChange={handleInputChange}   
                     onKeyPress={(e) => {
                         if (e.key === "Enter") handleEnterClick();
                     }}

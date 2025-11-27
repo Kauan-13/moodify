@@ -26,7 +26,6 @@
     flex: 1;
     height: 32px;
     border: none;
-    background: transparent;
     color: var(--theme-text);
     font-size: 16px;
     padding: 0;
@@ -37,6 +36,7 @@
     color: var(--theme-text-secondary);
     font-weight: 300;
 }
+
 
 .enterButton {
     padding: 14px 16px;

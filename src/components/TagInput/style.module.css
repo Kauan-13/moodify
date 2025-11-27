@@ -39,8 +39,6 @@
 .tagsContainer input {
   outline: none;
   border: none;
-  background-color: var(--theme-background);
-  line-height: 150%;
   color: var(--theme-text);
   font-size: 16px;
   padding: 14px 16px 6px 16px;
