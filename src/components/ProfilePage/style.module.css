@@ -20,6 +20,7 @@
 
 .profileInfo .accIcon {
     font-size: 300px;
+    color: var(--theme-primary);
 }
 
 .profileInfo .username {
