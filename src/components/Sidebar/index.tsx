@@ -1,11 +1,10 @@
 import { useState } from "react"
 import style from "./style.module.css"
-import { IoIosArrowForward, IoIosArrowBack, IoIosHelpCircle } from "react-icons/io";
+import { IoIosArrowForward, IoIosArrowBack} from "react-icons/io";
 import { MdOutlineLibraryAdd, MdPlaylistPlay, MdAccountCircle } from "react-icons/md";
 import { Link } from "react-router-dom";
 import type { Playlist as PlaylistType } from "../../types/playlist";
 import { usePlaylists } from "../../contexts/PlaylistContext";
-import { SiGoogleforms } from "react-icons/si";
 
 interface SidebarProps { onClick: () => void }
 
