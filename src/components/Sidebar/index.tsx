@@ -17,14 +17,16 @@ const Sidebar = ({ onClick }: SidebarProps) => {
     return (
         <div className={`${style.sidebar} ${isOpen ? style.open : " "}`}>
             <div className={style.logo}>
-                <div className={style.soundwave}>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <p>Moodify</p>
+               <Link to={"/"} className={style.link}>
+                    <div className={style.soundwave}>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <p>Moodify</p>
+                </Link>
             </div>
 
             <nav>

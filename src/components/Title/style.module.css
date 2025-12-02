@@ -1,8 +1,21 @@
 .container{
-   font-size: 60px;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     user-select: none;
 }
+
+.container h1{
+    font-size: 60px;
+    font-weight: 400;
+}
+
+.container p{
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.753);
+}
+
 
 .container em{
     font-weight: 500;

@@ -64,6 +64,7 @@ const Playlist = () => {
             <div className={styles.playlistContent}>
                 <div className={styles.playlistHeader}>
                     <h1 className={styles.playlistTitle}>Meu <i>mood</i> é: <span>{playlistName}</span></h1>
+                    <p className={styles.playlistSubtitle}>Com base no seu mood fizemos uma playlist que promete encaixar direitinho no seu dia.</p>
                 </div>
                 
                 <PlaylistActions
