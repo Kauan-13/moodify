@@ -1,0 +1,10 @@
+.waterMark {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 10pt;
+    color: rgba(0, 0, 0, 0.7);
+}

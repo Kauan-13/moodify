@@ -69,32 +69,20 @@ const Sidebar = ({ onClick }: SidebarProps) => {
                                     </li>
                                 ) : (
                                     playlists.map((playlist: PlaylistType) => (
-                                        <li key={playlist.id}>
-                                            <Link to={`/playlist/${playlist.id}`} className={style.link}>
+                                        <Link to={`/playlist/${playlist.id}`} className={style.link}>
+                                            <li key={playlist.id}>
                                                 <p>{playlist.mood.name}</p>
-                                            </Link>
-                                        </li>
+                                            </li>
+                                        </Link>
                                     ))
                                 )}
                             </div>
                         </li>
                     )}
 
-                    <li className={style.form_icon}>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdeyyF-rQLmpAdNP-PhHNq-KxzC0pY4T5a3Fqyx1xLpZtaJRw/viewform?usp=dialog" target="_blank" className={style.link}>
-                            <SiGoogleforms></SiGoogleforms>
-                            <p>Questionário</p>
-                        </a>
-                    </li>
-
                     <li className={style.account_icon} onClick={onClick}>
                         <MdAccountCircle></MdAccountCircle>
                         <p>Perfil</p>
-                    </li>
-
-                    <li className={style.help_icon}>
-                        <IoIosHelpCircle ></IoIosHelpCircle >
-                        <p>Ajuda</p>
                     </li>
                 </ul>
             </nav>

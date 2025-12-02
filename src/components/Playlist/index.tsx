@@ -8,6 +8,8 @@ import styles from "./styles.module.css";
 import { useAuth } from "../../contexts/AuthContext";
 import { type Playlist as PlaylistType, type Song as SongType } from "../../types/playlist";
 import { usePlaylists } from "../../contexts/PlaylistContext";
+import Watermark from "../Watermark";
+import FormAlert from "../FormAlert";
 
 const Playlist = () => {
     const [showPopup, setShowPopup] = useState(false);
@@ -92,6 +94,8 @@ const Playlist = () => {
             </div>
 
             {showPopup && <LoginPopup onClose={() => setShowPopup(false)} />}
+            <Watermark/>
+            <FormAlert/>
         </main>
     )
 }
