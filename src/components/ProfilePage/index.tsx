@@ -7,6 +7,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import type { Playlist as PlaylistType, Song as SongType } from "../../types/playlist";
 import { usePlaylists } from "../../contexts/PlaylistContext";
+import Watermark from "../Watermark";
+import FormAlert from "../FormAlert";
 
 const ProfilePage = () => {
     const [showPopup, setShowPopup] = useState(false);
@@ -71,6 +73,8 @@ const ProfilePage = () => {
             </div>
 
             {showPopup && <LoginPopup onClose={() => setShowPopup(false)} />}
+            <Watermark/>
+            <FormAlert/>
         </main>
     );
 };

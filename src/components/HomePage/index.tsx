@@ -5,6 +5,8 @@ import SearchForm from "../SearchForm";
 import LoginPopup from "../LoginPopup";
 import { useAuth } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
+import Watermark from "../Watermark";
+import FormAlert from "../FormAlert";
 
 const HomePage = () => {
     const [showPopup, setShowPopup] = useState(false);
@@ -28,6 +30,8 @@ const HomePage = () => {
             </div>
 
             {showPopup && <LoginPopup onClose={() => setShowPopup(false)} />}
+            <Watermark/>
+            <FormAlert/>
         </main>
     )
 }

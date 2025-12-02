@@ -98,7 +98,7 @@
 
 .account_icon {
   position: absolute;
-  bottom: 80px;
+  bottom: 10px;
   left: 40px;
 }
 
@@ -190,8 +190,12 @@
   height: auto;
   padding: 8px 0;
   gap: 0;
-  cursor: pointer;
+  
   transition: opacity 0.2s;
+}
+
+.playlists > a {
+  cursor: pointer;
 }
 
 .playlists li:hover {
