@@ -232,4 +232,37 @@ export const playlistsData: Playlist[] = [
       },
     ],
   },
+  {
+    id: "8",
+    mood: {
+      name: "Sofrência",
+      colors: ["#8B2E2E", "#5C1A1A"],
+    },
+    songs: [
+      {
+        id: "0",
+        name: "Fio de Cabelo",
+        artist: "Chitãozinho & Xororó",
+        album: "Somos Apaixonados",
+        year: 1982,
+        coverUrl: "./fio-de-cabelo.jpg",
+      },
+      {
+        id: "1",
+        name: "Ainda Ontem Chorei de Saudade",
+        artist: "João Mineiro & Marciano",
+        album: "João Mineiro & Marciano",
+        year: 1981,
+        coverUrl: "./chorei-de-saudade.jpg",
+      },
+      {
+        id: "2",
+        name: "É o Amor",
+        artist: "Zezé Di Camargo & Luciano",
+        album: "Zezé Di Camargo & Luciano",
+        year: 1991,
+        coverUrl: "./e-o-amor.jpg",
+      },
+    ],
+  },
 ];
