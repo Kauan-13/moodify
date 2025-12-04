@@ -9,7 +9,7 @@
 }
 
 .playlistTitle {
-    color: var(--theme-text);
+    color: var(--theme-primary);
     font-size: 3rem;
     font-weight: bold;
     margin: 0;

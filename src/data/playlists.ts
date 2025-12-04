@@ -1,11 +1,20 @@
 import type { Playlist } from "../types/playlist";
-
+import { moodThemes } from "../contexts/ThemeContext"
 export const playlistsData: Playlist[] = [
   {
     id: "1",
     mood: {
       name: "Feliz",
-      colors: ["#FFD700", "#FFA500"],
+      colors: [
+        moodThemes.feliz.primary,        // primary
+        moodThemes.feliz.primaryLight,   // primaryLight
+        moodThemes.feliz.background,     // background
+        moodThemes.feliz.backgroundAlt,  // backgroundAlt
+        moodThemes.feliz.text,           // text
+        moodThemes.feliz.textSecondary,  // textSecondary
+        moodThemes.feliz.border,         // border
+        moodThemes.feliz.accent          // accent
+      ],
     },
     songs: [
       {
@@ -38,7 +47,16 @@ export const playlistsData: Playlist[] = [
     id: "2",
     mood: {
       name: "Triste",
-      colors: ["#4A90E2", "#357ABD"],
+      colors: [
+        moodThemes.triste.primary,        // primary
+        moodThemes.triste.primaryLight,   // primaryLight
+        moodThemes.triste.background,     // background
+        moodThemes.triste.backgroundAlt,  // backgroundAlt
+        moodThemes.triste.text,           // text
+        moodThemes.triste.textSecondary,  // textSecondary
+        moodThemes.triste.border,         // border
+        moodThemes.triste.accent          // accent
+      ],
     },
     songs: [
       {
@@ -71,7 +89,16 @@ export const playlistsData: Playlist[] = [
     id: "3",
     mood: {
       name: "Energético",
-      colors: ["#E74C3C", "#C0392B"],
+      colors: [
+        moodThemes.energético.primary,        // primary
+        moodThemes.energético.primaryLight,   // primaryLight
+        moodThemes.energético.background,     // background
+        moodThemes.energético.backgroundAlt,  // backgroundAlt
+        moodThemes.energético.text,           // text
+        moodThemes.energético.textSecondary,  // textSecondary
+        moodThemes.energético.border,         // border
+        moodThemes.energético.accent          // accent
+      ],
     },
     songs: [
       {
@@ -104,7 +131,16 @@ export const playlistsData: Playlist[] = [
     id: "4",
     mood: {
       name: "Frio",
-      colors: ["#27AE60", "#229954"],
+      colors: [
+        moodThemes.frio.primary,        // primary
+        moodThemes.frio.primaryLight,   // primaryLight
+        moodThemes.frio.background,     // background
+        moodThemes.frio.backgroundAlt,  // backgroundAlt
+        moodThemes.frio.text,           // text
+        moodThemes.frio.textSecondary,  // textSecondary
+        moodThemes.frio.border,         // border
+        moodThemes.frio.accent          // accent
+      ],
     },
     songs: [
       {
@@ -137,7 +173,16 @@ export const playlistsData: Playlist[] = [
     id: "5",
     mood: {
       name: "Sozinho no espaço",
-      colors: ["#232c53ff", "#304ba5ff"],
+      colors: [
+        moodThemes.solitario.primary,        // primary
+        moodThemes.solitario.primaryLight,   // primaryLight
+        moodThemes.solitario.background,     // background
+        moodThemes.solitario.backgroundAlt,  // backgroundAlt
+        moodThemes.solitario.text,           // text
+        moodThemes.solitario.textSecondary,  // textSecondary
+        moodThemes.solitario.border,         // border
+        moodThemes.solitario.accent          // accent
+      ],
     },
     songs: [
       {
@@ -170,7 +215,16 @@ export const playlistsData: Playlist[] = [
     id: "6",
     mood: {
       name: "Amor",
-      colors: ["#232c53ff", "#304ba5ff"],
+      colors: [
+        moodThemes.romântico.primary,        // primary
+        moodThemes.romântico.primaryLight,   // primaryLight
+        moodThemes.romântico.background,     // background
+        moodThemes.romântico.backgroundAlt,  // backgroundAlt
+        moodThemes.romântico.text,           // text
+        moodThemes.romântico.textSecondary,  // textSecondary
+        moodThemes.romântico.border,         // border
+        moodThemes.romântico.accent          // accent
+      ],
     },
     songs: [
       {
@@ -199,77 +253,104 @@ export const playlistsData: Playlist[] = [
       },
     ],
   },
-  {
-    id: "7",
-    mood: {
-      name: "Literário",
-      colors: ["#232c53ff", "#304ba5ff"],
-    },
-    songs: [
-      {
-        id: "0",
-        name: "José",
-        artist: "Paulo Diniz",
-        album: "E Agora José",
-        year: 1972,
-        coverUrl: "./jose.avif",
-      },
-      {
-        id: "1",
-        name: "Rosa de Hiroshima",
-        artist: "Ney Matogrosso",
-        album: "Seu Tipo",
-        year: 1979,
-        coverUrl: "./tipo.jpg",
-      },
-      {
-        id: "2",
-        name: "Carolina Maria de Jesus",
-        artist: "Didi Assis",
-        album: "Giramundo",
-        year: 2018,
-        coverUrl: "./giramundo.jpg",
-      },
-    ],
-  },
-  {
-    id: "8",
-    mood: {
-      name: "Sofrência",
-      colors: ["#8B2E2E", "#5C1A1A"],
-    },
-    songs: [
-      {
-        id: "0",
-        name: "Fio de Cabelo",
-        artist: "Chitãozinho & Xororó",
-        album: "Somos Apaixonados",
-        year: 1982,
-        coverUrl: "./fio-de-cabelo.jpg",
-      },
-      {
-        id: "1",
-        name: "Ainda Ontem Chorei de Saudade",
-        artist: "João Mineiro & Marciano",
-        album: "João Mineiro & Marciano",
-        year: 1981,
-        coverUrl: "./chorei-de-saudade.jpg",
-      },
-      {
-        id: "2",
-        name: "É o Amor",
-        artist: "Zezé Di Camargo & Luciano",
-        album: "Zezé Di Camargo & Luciano",
-        year: 1991,
-        coverUrl: "./e-o-amor.jpg",
-      },
-    ],
-  },
+  // {
+  //   id: "7",
+  //   mood: {
+  //     name: "Literário",
+  //     colors: [
+  //       moodThemes.literário.primary,        // primary
+  //       moodThemes.literário.primaryLight,   // primaryLight
+  //       moodThemes.literário.background,     // background
+  //       moodThemes.literário.backgroundAlt,  // backgroundAlt
+  //       moodThemes.literário.text,           // text
+  //       moodThemes.literário.textSecondary,  // textSecondary
+  //       moodThemes.literário.border,         // border
+  //       moodThemes.literário.accent          // accent
+  //     ],
+  //   },
+  //   songs: [
+  //     {
+  //       id: "0",
+  //       name: "José",
+  //       artist: "Paulo Diniz",
+  //       album: "E Agora José",
+  //       year: 1972,
+  //       coverUrl: "./jose.avif",
+  //     },
+  //     {
+  //       id: "1",
+  //       name: "Rosa de Hiroshima",
+  //       artist: "Ney Matogrosso",
+  //       album: "Seu Tipo",
+  //       year: 1979,
+  //       coverUrl: "./tipo.jpg",
+  //     },
+  //     {
+  //       id: "2",
+  //       name: "Carolina Maria de Jesus",
+  //       artist: "Didi Assis",
+  //       album: "Giramundo",
+  //       year: 2018,
+  //       coverUrl: "./giramundo.jpg",
+  //     },
+  //   ],
+  // },
+  // {
+  //   id: "8",
+  //   mood: {
+  //     name: "Sofrência",
+  //     colors: [
+  //       moodThemes.sofrência.primary,        // primary
+  //       moodThemes.sofrência.primaryLight,   // primaryLight
+  //       moodThemes.sofrência.background,     // background
+  //       moodThemes.sofrência.backgroundAlt,  // backgroundAlt
+  //       moodThemes.sofrência.text,           // text
+  //       moodThemes.sofrência.textSecondary,  // textSecondary
+  //       moodThemes.sofrência.border,         // border
+  //       moodThemes.sofrência.accent          // accent
+  //     ],
+  //   },
+  //   songs: [
+  //     {
+  //       id: "0",
+  //       name: "Fio de Cabelo",
+  //       artist: "Chitãozinho & Xororó",
+  //       album: "Somos Apaixonados",
+  //       year: 1982,
+  //       coverUrl: "./fio-de-cabelo.jpg",
+  //     },
+  //     {
+  //       id: "1",
+  //       name: "Ainda Ontem Chorei de Saudade",
+  //       artist: "João Mineiro & Marciano",
+  //       album: "João Mineiro & Marciano",
+  //       year: 1981,
+  //       coverUrl: "./chorei-de-saudade.jpg",
+  //     },
+  //     {
+  //       id: "2",
+  //       name: "É o Amor",
+  //       artist: "Zezé Di Camargo & Luciano",
+  //       album: "Zezé Di Camargo & Luciano",
+  //       year: 1991,
+  //       coverUrl: "./e-o-amor.jpg",
+  //     },
+  //   ],
+  // },
   {
     id: "9",
     mood: {
       name: "Romântica",
-      colors: ["#FFC0CB", "#FF69B4"],
+      colors: [
+        moodThemes.romântico.primary,        // primary
+        moodThemes.romântico.primaryLight,   // primaryLight
+        moodThemes.romântico.background,     // background
+        moodThemes.romântico.backgroundAlt,  // backgroundAlt
+        moodThemes.romântico.text,           // text
+        moodThemes.romântico.textSecondary,  // textSecondary
+        moodThemes.romântico.border,         // border
+        moodThemes.romântico.accent          // accent
+      ],
     },
     songs: [
       {
@@ -303,7 +384,7 @@ export const playlistsData: Playlist[] = [
         album: "Speak Now",
         year: 2010,
         coverUrl: "./a4.jpeg",
-      }
+      },
     ],
   },
 ];

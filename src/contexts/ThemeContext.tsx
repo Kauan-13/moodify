@@ -18,7 +18,7 @@ interface Theme {
   border: string
   accent: string
 }
-const moodThemes: Record<string, Theme> = {
+export const moodThemes: Record<string, Theme> = {
   default: {
     primary: "#101010",
     primaryLight: "#E0E0E0",
