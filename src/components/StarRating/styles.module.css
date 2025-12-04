@@ -1,0 +1,44 @@
+.starRating {
+  display: flex;
+  gap: 4px;
+}
+
+.starContainer {
+  position: relative;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+}
+
+.clickableHalfLeft {
+  position: absolute;
+  inset: 0;
+  width: 50%;
+  z-index: 10;
+}
+
+.clickableHalfRight {
+  position: absolute;
+  inset: 0;
+  left: 50%;
+  width: 50%;
+  z-index: 10;
+}
+
+.starBackground {
+  width: 32px;
+  height: 32px;
+  color: lightgray;
+}
+
+.starFillContainer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.starForeground {
+  width: 32px;
+  height: 32px;
+  color: orange;
+}
