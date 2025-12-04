@@ -265,4 +265,45 @@ export const playlistsData: Playlist[] = [
       },
     ],
   },
+  {
+    id: "9",
+    mood: {
+      name: "Romântica",
+      colors: ["#FFC0CB", "#FF69B4"],
+    },
+    songs: [
+      {
+        id: "0",
+        name: "Lover",
+        artist: "Taylor Swift",
+        album: "Lover",
+        year: 2019,
+        coverUrl: "./a1.png",
+      },
+      {
+        id: "1",
+        name: "You Belong With Me",
+        artist: "Taylor Swift",
+        album: "Fearless",
+        year: 2008,
+        coverUrl: "./a2.jpg",
+      },
+      {
+        id: "2",
+        name: "Call It What You Want",
+        artist: "Taylor Swift",
+        album: "Reputation",
+        year: 2017,
+        coverUrl: "./a3.jpeg",
+      },
+      {
+        id: "3",
+        name: "Enchanted",
+        artist: "Taylor Swift",
+        album: "Speak Now",
+        year: 2010,
+        coverUrl: "./a4.jpeg",
+      }
+    ],
+  },
 ];
