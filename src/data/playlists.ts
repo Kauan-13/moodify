@@ -4,7 +4,7 @@ export const playlistsData: Playlist[] = [
   {
     id: "1",
     mood: {
-      name: "Happy",
+      name: "Feliz",
       colors: ["#FFD700", "#FFA500"],
     },
     songs: [
@@ -37,7 +37,7 @@ export const playlistsData: Playlist[] = [
   {
     id: "2",
     mood: {
-      name: "Sad",
+      name: "Triste",
       colors: ["#4A90E2", "#357ABD"],
     },
     songs: [
@@ -70,7 +70,7 @@ export const playlistsData: Playlist[] = [
   {
     id: "3",
     mood: {
-      name: "Energetic",
+      name: "Energético",
       colors: ["#E74C3C", "#C0392B"],
     },
     songs: [
@@ -103,7 +103,7 @@ export const playlistsData: Playlist[] = [
   {
     id: "4",
     mood: {
-      name: "Chill",
+      name: "Frio",
       colors: ["#27AE60", "#229954"],
     },
     songs: [
@@ -136,7 +136,7 @@ export const playlistsData: Playlist[] = [
   {
     id: "5",
     mood: {
-      name: "Alone in space",
+      name: "Sozinho no espaço",
       colors: ["#232c53ff", "#304ba5ff"],
     },
     songs: [
@@ -163,6 +163,72 @@ export const playlistsData: Playlist[] = [
         album: "Major Tom (...völlig losgelöst) (All Versions)",
         year: 1983,
         coverUrl: "./tom.jpg",
+      },
+    ],
+  },
+  {
+    id: "6",
+    mood: {
+      name: "Amor",
+      colors: ["#232c53ff", "#304ba5ff"],
+    },
+    songs: [
+      {
+        id: "0",
+        name: "N",
+        artist: "Nando Reis",
+        album: "Sim e Não",
+        year: 2006,
+        coverUrl: "./simnao.jpg",
+      },
+      {
+        id: "1",
+        name: "Passeio",
+        artist: "Belchior",
+        album: "Belchior",
+        year: 1974,
+        coverUrl: "./belchior.jpg",
+      },
+      {
+        id: "2",
+        name: "Dueto (Part. Clara Buarque)",
+        artist: "Chico Buarque & Clara Buarque",
+        album: "Caravanas",
+        year: 2017,
+        coverUrl: "./caravanas.jpg",
+      },
+    ],
+  },
+  {
+    id: "7",
+    mood: {
+      name: "Literário",
+      colors: ["#232c53ff", "#304ba5ff"],
+    },
+    songs: [
+      {
+        id: "0",
+        name: "José",
+        artist: "Paulo Diniz",
+        album: "E Agora José",
+        year: 1972,
+        coverUrl: "./jose.avif",
+      },
+      {
+        id: "1",
+        name: "Rosa de Hiroshima",
+        artist: "Ney Matogrosso",
+        album: "Seu Tipo",
+        year: 1979,
+        coverUrl: "./tipo.jpg",
+      },
+      {
+        id: "2",
+        name: "Carolina Maria de Jesus",
+        artist: "Didi Assis",
+        album: "Giramundo",
+        year: 2018,
+        coverUrl: "./giramundo.jpg",
       },
     ],
   },
