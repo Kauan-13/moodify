@@ -8,10 +8,13 @@ import { useNavigate } from "react-router-dom";
 import Watermark from "../Watermark";
 import FormAlert from "../FormAlert";
 import CsatPopup from "../CSATPopup";
+import useCSATPopup from "../../hooks/CSATPopupHook";
 
 const HomePage = () => {
     const [showPopup, setShowPopup] = useState(false);
     const { user } = useAuth();
+    const { ID_FUNC, showCSAT, setShowCSAT, handleSubmit, alreadyRated } = useCSATPopup(0)
+    
     const navigate = useNavigate();
 
     const handleProfileClick = () => {
@@ -21,30 +24,15 @@ const HomePage = () => {
         else setShowPopup(true);
     };
 
-    const [ showCSAT, setShowCSAT ] = useState(true)
-    const ID_FUNC = 0
-
-    useEffect(() => {
-
-        const bool = Boolean( localStorage.getItem(`kauan-13.moodify:csat:${ID_FUNC}`) )
-        setShowCSAT(!bool)
-
-    }, [])
-
-    const handleSubmit = (e: any, rating: number, id: number) => {
-        e.preventDefault()
-        console.log({ rating })
-        setShowCSAT(false)
-
-        localStorage.setItem(`kauan-13.moodify:csat:${id}`, 'true')
-    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    useEffect(() => { alreadyRated() }, [])
     
     return (
         <main>
             {
                 showCSAT &&
                 <CsatPopup
-                    funcionalidadeNome="'Entrada de Texto'"
+                    funcionalidadeNome="Entrada de Texto"
                     funcionalidadeId={ ID_FUNC }
 
                     onClose={ () => setShowCSAT(false) }

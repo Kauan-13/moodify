@@ -6,7 +6,8 @@ import StarRating from "../StarRating";
 interface Props {
   funcionalidadeNome: string;
   funcionalidadeId: number
-  onSave: (e: any, rating: number, id: number) => void;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  onSave: (e: any, rating: number, id: number, name: string) => void;
   onClose: () => void;
 }
 
@@ -20,7 +21,7 @@ const CsatPopup = ({ funcionalidadeNome, funcionalidadeId, onSave, onClose, }: P
         <div className={styles.modalContent} onClick={(e) => e.stopPropagation()} >
           
           <div className={styles.modalHeader}>
-            <h2>{`Quão satisfeito(a) você está com a funcionalidade para ${funcionalidadeNome}?`}</h2>
+            <h2>{`Quão satisfeito(a) você está com a funcionalidade para '${funcionalidadeNome}'?`}</h2>
             <button
               className={styles.closeButton}
               onClick={onClose}
@@ -30,7 +31,7 @@ const CsatPopup = ({ funcionalidadeNome, funcionalidadeId, onSave, onClose, }: P
             </button>
           </div>
 
-          <form className={styles.modalBody} onSubmit={ (e) => onSave(e, rating, funcionalidadeId)}>
+          <form className={styles.modalBody} onSubmit={ (e) => onSave(e, rating, funcionalidadeId, funcionalidadeNome)}>
 
           <div className={ styles.starrating }>
                 <div className={styles.sectionHeading}>
