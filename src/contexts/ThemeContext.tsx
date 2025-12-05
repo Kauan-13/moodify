@@ -1,11 +1,13 @@
 "use client"
 
 import { createContext, useContext, useState, useEffect, type ReactNode } from "react"
+import { getMoodColors } from "../utils/moodColorMapper"
 
 interface ThemeContextType {
   mood: string
   setMood: (mood: string) => void
   currentTheme: Theme
+  currentColors: string[]
 }
 
 interface Theme {
@@ -18,6 +20,7 @@ interface Theme {
   border: string
   accent: string
 }
+
 const moodThemes: Record<string, Theme> = {
   default: {
     primary: "#101010",
@@ -28,6 +31,16 @@ const moodThemes: Record<string, Theme> = {
     textSecondary: "#666666",
     border: "#E0E0E0",
     accent: "#333333",
+  },
+  fallback: {
+    primary: "#6366F1",
+    primaryLight: "#C7D2FE",
+    background: "#FAFBFF",
+    backgroundAlt: "#F0F3FF",
+    text: "#1E1B4B",
+    textSecondary: "#6366F1",
+    border: "#A5B4FC",
+    accent: "#8B5CF6",
   },
   feliz: {
     primary: "#E6C200",
@@ -169,38 +182,230 @@ const moodThemes: Record<string, Theme> = {
     border: "#CE93D8",
     accent: "#FF8A65",
   },
+  "sozinho no espaço": {
+    primary: "#304ba5",
+    primaryLight: "#6B7FC9",
+    background: "#F8F9FC",
+    backgroundAlt: "#E8ECF7",
+    text: "#1A1A1A",
+    textSecondary: "#232c53",
+    border: "#7B8BD9",
+    accent: "#4A5FBF",
+  },
+  amor: {
+    primary: "#E91E63",
+    primaryLight: "#F8BBD0",
+    background: "#FFF5F8",
+    backgroundAlt: "#FDEAF0",
+    text: "#1A1A1A",
+    textSecondary: "#C2185B",
+    border: "#F48FB1",
+    accent: "#EC407A",
+  },
+  literário: {
+    primary: "#5D4037",
+    primaryLight: "#BCAAA4",
+    background: "#FBF9F7",
+    backgroundAlt: "#F5F0ED",
+    text: "#3E2723",
+    textSecondary: "#6D4C41",
+    border: "#A1887F",
+    accent: "#795548",
+  },
+  sofrência: {
+    primary: "#8B2E2E",
+    primaryLight: "#D19999",
+    background: "#FFF8F8",
+    backgroundAlt: "#F7EBEB",
+    text: "#1A1A1A",
+    textSecondary: "#5C1A1A",
+    border: "#C99999",
+    accent: "#A04040",
+  },
+  romântica: {
+    primary: "#FF69B4",
+    primaryLight: "#FFB3D9",
+    background: "#FFF9FC",
+    backgroundAlt: "#FFF0F7",
+    text: "#1A1A1A",
+    textSecondary: "#D64A90",
+    border: "#FFADD2",
+    accent: "#FF85C0",
+  },
 }
-
 
 // função utilitária de aplicar tema
 function applyTheme(theme: Theme) {
   const root = document.documentElement
   Object.entries(theme).forEach(([key, value]) => {
-    root.style.setProperty(`--theme-${key.replace(/[A-Z]/g, m => "-" + m.toLowerCase())}`, value)
+    root.style.setProperty(`--theme-${key.replace(/[A-Z]/g, (m) => "-" + m.toLowerCase())}`, value)
   })
 }
-
 
 // provider
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
+const fallbackThemes: Theme[] = [
+  {
+    // Roxo/Azul
+    primary: "#6366F1",
+    primaryLight: "#C7D2FE",
+    background: "#FAFBFF",
+    backgroundAlt: "#F0F3FF",
+    text: "#1E1B4B",
+    textSecondary: "#6366F1",
+    border: "#A5B4FC",
+    accent: "#8B5CF6",
+  },
+  {
+    // Rosa/Vermelho
+    primary: "#EC4899",
+    primaryLight: "#FBCFE8",
+    background: "#FFF5FA",
+    backgroundAlt: "#FFEEF5",
+    text: "#831843",
+    textSecondary: "#EC4899",
+    border: "#F9A8D4",
+    accent: "#F43F5E",
+  },
+  {
+    // Verde/Ciano
+    primary: "#10B981",
+    primaryLight: "#A7F3D0",
+    background: "#F0FDF9",
+    backgroundAlt: "#ECFDF5",
+    text: "#064E3B",
+    textSecondary: "#059669",
+    border: "#6EE7B7",
+    accent: "#14B8A6",
+  },
+  {
+    // Laranja
+    primary: "#F59E0B",
+    primaryLight: "#FDE68A",
+    background: "#FFFBEB",
+    backgroundAlt: "#FEF3C7",
+    text: "#78350F",
+    textSecondary: "#F59E0B",
+    border: "#FCD34D",
+    accent: "#F97316",
+  },
+  {
+    // Roxo/Magenta
+    primary: "#8B5CF6",
+    primaryLight: "#DDD6FE",
+    background: "#FAF5FF",
+    backgroundAlt: "#F3E8FF",
+    text: "#4C1D95",
+    textSecondary: "#8B5CF6",
+    border: "#C4B5FD",
+    accent: "#D946EF",
+  },
+  {
+    // Ciano/Azul
+    primary: "#06B6D4",
+    primaryLight: "#A5F3FC",
+    background: "#F0FDFF",
+    backgroundAlt: "#ECFEFF",
+    text: "#164E63",
+    textSecondary: "#0891B2",
+    border: "#67E8F9",
+    accent: "#0EA5E9",
+  },
+  {
+    // Turquesa
+    primary: "#14B8A6",
+    primaryLight: "#99F6E4",
+    background: "#F0FDFA",
+    backgroundAlt: "#CCFBF1",
+    text: "#134E4A",
+    textSecondary: "#0D9488",
+    border: "#5EEAD4",
+    accent: "#10B981",
+  },
+  {
+    // Pêssego
+    primary: "#FB923C",
+    primaryLight: "#FED7AA",
+    background: "#FFF7ED",
+    backgroundAlt: "#FFEDD5",
+    text: "#7C2D12",
+    textSecondary: "#EA580C",
+    border: "#FDBA74",
+    accent: "#F97316",
+  },
+  {
+    // Lavanda
+    primary: "#A855F7",
+    primaryLight: "#E9D5FF",
+    background: "#FAF5FF",
+    backgroundAlt: "#F3E8FF",
+    text: "#581C87",
+    textSecondary: "#9333EA",
+    border: "#D8B4FE",
+    accent: "#C026D3",
+  },
+  {
+    // Coral
+    primary: "#F87171",
+    primaryLight: "#FECACA",
+    background: "#FFF5F5",
+    backgroundAlt: "#FEE2E2",
+    text: "#7F1D1D",
+    textSecondary: "#DC2626",
+    border: "#FCA5A5",
+    accent: "#EF4444",
+  },
+]
+
+/**
+ * Gera um hash numérico simples a partir de uma string
+ */
+const hashString = (str: string): number => {
+  let hash = 0
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charCodeAt(i)
+    hash = (hash << 5) - hash + char
+    hash = hash & hash
+  }
+  return Math.abs(hash)
+}
+
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [mood, setMood] = useState("")
   const [currentTheme, setCurrentTheme] = useState<Theme>(moodThemes.default)
+  const [currentColors, setCurrentColors] = useState<string[]>(["#6366F1", "#8B5CF6"])
 
   useEffect(() => {
+    if (!mood || mood.trim() === "") {
+      setCurrentTheme(moodThemes.default)
+      applyTheme(moodThemes.default)
+      setCurrentColors(["#6366F1", "#8B5CF6", "#A855F7"])
+      return
+    }
+
     const moodKey = mood.toLowerCase().trim()
+
     const theme = Object.entries(moodThemes).find(([key]) => moodKey.includes(key) || key.includes(moodKey))
-    const selected = theme?.[1] ?? moodThemes.default
+
+    let selected: Theme
+    if (theme) {
+      selected = theme[1]
+    } else {
+      const hash = hashString(moodKey)
+      const themeIndex = hash % fallbackThemes.length
+      selected = fallbackThemes[themeIndex]
+    }
 
     setCurrentTheme(selected)
     applyTheme(selected)
+
+    const colors = getMoodColors(mood)
+    setCurrentColors(colors)
   }, [mood])
 
   return (
-    <ThemeContext.Provider value={{ mood, setMood, currentTheme }}>
-      {children}
-    </ThemeContext.Provider>
+    <ThemeContext.Provider value={{ mood, setMood, currentTheme, currentColors }}>{children}</ThemeContext.Provider>
   )
 }
 

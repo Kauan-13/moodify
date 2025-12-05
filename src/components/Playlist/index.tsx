@@ -41,7 +41,7 @@ const Playlist = () => {
     useEffect(() => { alreadyRated() }, [])
 
     const handleProfileClick = () => {
-        if (user !== null && user !== undefined )
+        if (user !== null && user !== undefined)
             navigate('/profile');
         else setShowPopup(true);
     };
@@ -71,10 +71,10 @@ const Playlist = () => {
                 showCSAT &&
                 <CsatPopup
                     funcionalidadeNome="Visualizar Playlist"
-                    funcionalidadeId={ ID_FUNC }
+                    funcionalidadeId={ID_FUNC}
 
-                    onClose={ () => setShowCSAT(false) }
-                    onSave={ handleSubmit }
+                    onClose={() => setShowCSAT(false)}
+                    onSave={handleSubmit}
                 />
             }
 
@@ -85,7 +85,7 @@ const Playlist = () => {
                     <h1 className={styles.playlistTitle}>Meu <i>mood</i> é: <span>{playlistName}</span></h1>
                     <p className={styles.playlistSubtitle}>Com base no seu mood fizemos uma playlist que promete encaixar direitinho no seu dia.</p>
                 </div>
-                
+
                 <PlaylistActions
                     playlistId={playlist.id}
                     playlistName={playlistName}
@@ -93,26 +93,26 @@ const Playlist = () => {
 
                 <div className={styles.cardsGrid}>
                     {playlist.songs.filter(song => visibleSongs.has(song.id)).length === 0 ?
-                    ( <p className={styles.playlistEmpty} >Você deletou todas as músicas desta playlist...</p> )
-                    : playlist.songs.filter(song => visibleSongs.has(song.id)).map((song) => (
-                        <CardMusic
-                            key={song.id}
-                            musicName={song.name}
-                            albumName={song.album}
-                            albumImage={song.coverUrl}
-                            player={song.artist}
-                            year={song.year}
-                            playing={playing === song.id}
-                            onDelete={() => handleDeleteSong(song.id)}
-                            onPlay={() => setPlaying(prev => prev !== song.id ? song.id : null)}
-                        />
-                    ))}
+                        (<p className={styles.playlistEmpty} >Você deletou todas as músicas desta playlist...</p>)
+                        : playlist.songs.filter(song => visibleSongs.has(song.id)).map((song) => (
+                            <CardMusic
+                                key={song.id}
+                                musicName={song.name}
+                                albumName={song.album}
+                                albumImage={song.coverUrl}
+                                player={song.artist}
+                                year={song.year}
+                                playing={playing === song.id}
+                                onDelete={() => handleDeleteSong(song.id)}
+                                onPlay={() => setPlaying(prev => prev !== song.id ? song.id : null)}
+                            />
+                        ))}
                 </div>
             </div>
 
             {showPopup && <LoginPopup onClose={() => setShowPopup(false)} />}
-            <Watermark/>
-            <FormAlert/>
+            <Watermark />
+            <FormAlert />
         </main>
     )
 }
