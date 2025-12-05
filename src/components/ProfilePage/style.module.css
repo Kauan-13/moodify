@@ -94,7 +94,7 @@
 
     max-width: 1200px;
     width: 100vw;
-    height: 55%;
+    height: fit-content;
 }
 
 .profilePlaylistCard {
