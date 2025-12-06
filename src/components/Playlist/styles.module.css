@@ -40,3 +40,7 @@
     font-size: 20px;
     opacity: 60%;
 }
+
+h1{
+    color: var(--theme-text);
+}
