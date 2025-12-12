@@ -64,6 +64,8 @@ const SearchBar = ({ onClick, isClicked, min, max }: Props) => {
           name="search"
           id="search"
           placeholder="Meu mood hoje é..."
+          autoComplete="off"
+          spellCheck={false}
           className={style.searchInput}
           style={inputStyle}
           value={searchInput}
