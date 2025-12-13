@@ -74,7 +74,7 @@ const ProfilePage = () => {
 
             {showPopup && <LoginPopup onClose={() => setShowPopup(false)} />}
             <Watermark/>
-            <FormAlert/>
+            {/* <FormAlert/> */}
         </main>
     );
 };

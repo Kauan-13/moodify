@@ -36,14 +36,14 @@ const HomePage = () => {
     <main>
       <GradientBackground colors={currentColors} />
 
-      {showCSAT && (
+      {/* {showCSAT && (
         <CsatPopup
           funcionalidadeNome="Entrada de Texto"
           funcionalidadeId={ID_FUNC}
           onClose={() => setShowCSAT(false)}
           onSave={handleSubmit}
         />
-      )}
+      )} */}
 
       <Sidebar onClick={handleProfileClick} />
 
@@ -54,7 +54,7 @@ const HomePage = () => {
 
       {showPopup && <LoginPopup onClose={() => setShowPopup(false)} />}
       <Watermark />
-      <FormAlert />
+      {/* <FormAlert /> */}
     </main>
   )
 }

@@ -47,6 +47,7 @@
     flex-direction: column;
     gap: 12px;
     align-items: flex-end;
+    margin-top: 30px;
 }
 
 .syncButton,
@@ -89,7 +90,7 @@
     text-align: center;
 
     background-color: var(--theme-background-alt);
-    padding: 32px;
+    padding: 20px 20px 20px 20px;
     border-radius: 8px;
 
     max-width: 1200px;

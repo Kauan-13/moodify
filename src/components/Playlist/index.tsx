@@ -68,14 +68,14 @@ const Playlist = () => {
     return (
         <main className={styles.playlistContainer}>
             {
-                showCSAT &&
-                <CsatPopup
-                    funcionalidadeNome="Visualizar Playlist"
-                    funcionalidadeId={ID_FUNC}
+                // showCSAT &&
+                // <CsatPopup
+                //     funcionalidadeNome="Visualizar Playlist"
+                //     funcionalidadeId={ID_FUNC}
 
-                    onClose={() => setShowCSAT(false)}
-                    onSave={handleSubmit}
-                />
+                //     onClose={() => setShowCSAT(false)}
+                //     onSave={handleSubmit}
+                // />
             }
 
             <Sidebar onClick={() => handleProfileClick()} />
@@ -112,7 +112,7 @@ const Playlist = () => {
 
             {showPopup && <LoginPopup onClose={() => setShowPopup(false)} />}
             <Watermark />
-            <FormAlert />
+            {/* <FormAlert /> */}
         </main>
     )
 }
