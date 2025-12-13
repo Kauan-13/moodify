@@ -3,6 +3,9 @@ import Sidebar from "../Sidebar";
 import styles from "./style.module.css";
 import { FaCircleInfo } from "react-icons/fa6";
 import { BsInfoCircle } from "react-icons/bs";
+import LoginPopup from "../LoginPopup";
+import Watermark from "../Watermark";
+import FormAlert from "../FormAlert";
 
 const EmptyPage = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -12,6 +15,7 @@ const EmptyPage = () => {
       <Sidebar onClick={() => setShowPopup(true)} />
 
       <section className={styles.content}>
+        
         <div className={styles.card}>
           <h1 className={styles.title}>Ops! Não foi possível gerar a playlist :/</h1>
           <p className={styles.text}>
@@ -29,6 +33,9 @@ const EmptyPage = () => {
             Utilizamos seus gostos musicais para selecionar músicas que realmente combinem com você.
           </p>
         </div>
+        {showPopup && <LoginPopup onClose={() => setShowPopup(false)} />}
+        <Watermark />
+        <FormAlert />
       </section>
     </main>
   );
