@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Sidebar from "../Sidebar";
 import styles from "./style.module.css";
-import { FaCircleInfo } from "react-icons/fa6";
 import { BsInfoCircle } from "react-icons/bs";
 import LoginPopup from "../LoginPopup";
 import Watermark from "../Watermark";
