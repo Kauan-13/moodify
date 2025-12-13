@@ -16,7 +16,7 @@ const StarRating = ({ value, onChange, maxStars = 5 }: Props) => {
   const [hoverValue, setHoverValue] = useState<number | null>(null)
 
   function handleClick(starIndex: number, isHalf: boolean): void {
-    const newValue = starIndex + (isHalf ? 0.5 : 1)
+    const newValue = starIndex + (isHalf ? 1 : 1)
     onChange(newValue)
   }
 
@@ -27,7 +27,7 @@ const StarRating = ({ value, onChange, maxStars = 5 }: Props) => {
     const x = event.clientX - rect.left
     const isHalf = x < rect.width / 2
 
-    setHoverValue(starIndex + (isHalf ? 0.5 : 1))
+    setHoverValue(starIndex + (isHalf ? 1 : 1))
 
   }
 

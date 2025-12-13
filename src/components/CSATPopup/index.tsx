@@ -35,7 +35,7 @@ const CsatPopup = ({ funcionalidadeNome, funcionalidadeId, onSave, onClose, }: P
 
           <div className={ styles.starrating }>
                 <div className={styles.sectionHeading}>
-                    <p className={styles.tip}>Selecione uma avaliação de 0,5 à 5 estrelas</p>
+                    <p className={styles.tip}>Selecione uma avaliação de 1 à 5 estrelas</p>
                 </div>
                 <div className={styles.starsWrapper}>
                     <p className={styles.starsLabel}>Sua avaliação</p>
