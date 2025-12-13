@@ -1,0 +1,30 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+}
+
+.title {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+.subtitle{
+    font-size: 1.7rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 1.2rem;
+}
+.text {
+  font-size: 1.5rem;
+  text-align: justify;
+  color: #444;
+}
+
+.card{
+    width: 60%;
+    margin-left: 120px;
+}
+

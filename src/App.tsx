@@ -7,6 +7,7 @@ import { PlaylistProvider } from "./contexts/PlaylistContext"
 import { ThemeProvider } from "./contexts/ThemeContext"
 import { Toaster } from "sonner"
 import DashboardPage from "./components/DashboardPage"
+import EmptyPage from "./components/EmptyPage"
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
               <Route path="/playlist/:id" element={<Playlist />}></Route>
               <Route path="/profile" element={<ProfilePage />}></Route>
               <Route path="/csat" element={<DashboardPage />}></Route>
+              <Route path="/empty" element={<EmptyPage />}></Route>
             </Routes>
             <Toaster richColors closeButton position="top-right" theme="light" />
           </HashRouter>
