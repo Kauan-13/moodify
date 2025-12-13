@@ -4,7 +4,6 @@ import styles from "./style.module.css";
 import { BsInfoCircle } from "react-icons/bs";
 import LoginPopup from "../LoginPopup";
 import Watermark from "../Watermark";
-import FormAlert from "../FormAlert";
 
 const EmptyPage = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -34,7 +33,6 @@ const EmptyPage = () => {
         </div>
         {showPopup && <LoginPopup onClose={() => setShowPopup(false)} />}
         <Watermark />
-        <FormAlert />
       </section>
     </main>
   );
