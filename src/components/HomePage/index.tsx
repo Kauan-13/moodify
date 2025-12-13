@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import Sidebar from "../Sidebar"
 import Title from "../Title"
 import SearchForm from "../SearchForm"
@@ -8,16 +8,16 @@ import LoginPopup from "../LoginPopup"
 import { useAuth } from "../../contexts/AuthContext"
 import { useNavigate } from "react-router-dom"
 import Watermark from "../Watermark"
-import FormAlert from "../FormAlert"
-import CsatPopup from "../CSATPopup"
-import useCSATPopup from "../../hooks/CSATPopupHook"
+// import FormAlert from "../FormAlert"
+// import CsatPopup from "../CSATPopup"
+// import useCSATPopup from "../../hooks/CSATPopupHook"
 import GradientBackground from "../GradientBackground"
 import { useTheme } from "../../contexts/ThemeContext"
 
 const HomePage = () => {
   const [showPopup, setShowPopup] = useState(false)
   const { user } = useAuth()
-  const { ID_FUNC, showCSAT, setShowCSAT, handleSubmit, alreadyRated } = useCSATPopup(0)
+  // const { ID_FUNC, showCSAT, setShowCSAT, handleSubmit, alreadyRated } = useCSATPopup(0)
   const { currentColors } = useTheme()
 
   const navigate = useNavigate()
@@ -28,9 +28,9 @@ const HomePage = () => {
   }
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => {
-    alreadyRated()
-  }, [])
+  // useEffect(() => {
+  //   alreadyRated()
+  // }, [])
 
   return (
     <main>

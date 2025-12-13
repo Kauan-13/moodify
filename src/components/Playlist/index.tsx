@@ -9,9 +9,9 @@ import { useAuth } from "../../contexts/AuthContext";
 import { type Playlist as PlaylistType, type Song as SongType } from "../../types/playlist";
 import { usePlaylists } from "../../contexts/PlaylistContext";
 import Watermark from "../Watermark";
-import CsatPopup from "../CSATPopup";
-import FormAlert from "../FormAlert";
-import useCSATPopup from "../../hooks/CSATPopupHook";
+// import CsatPopup from "../CSATPopup";
+// import FormAlert from "../FormAlert";
+// import useCSATPopup from "../../hooks/CSATPopupHook";
 
 const Playlist = () => {
     const [showPopup, setShowPopup] = useState(false);
@@ -24,7 +24,7 @@ const Playlist = () => {
     const { user } = useAuth();
     const { id } = useParams<{ id: string }>();
     const { getPlaylistById } = usePlaylists();
-    const { ID_FUNC, showCSAT, setShowCSAT, handleSubmit, alreadyRated } = useCSATPopup(1)
+    // const { ID_FUNC, showCSAT, setShowCSAT, handleSubmit, alreadyRated } = useCSATPopup(1)
 
     useEffect(() => {
         if (id) {
@@ -38,7 +38,7 @@ const Playlist = () => {
     }, [id, getPlaylistById]);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    useEffect(() => { alreadyRated() }, [])
+    // useEffect(() => { alreadyRated() }, [])
 
     const handleProfileClick = () => {
         if (user !== null && user !== undefined)
