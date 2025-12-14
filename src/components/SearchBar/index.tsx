@@ -25,13 +25,30 @@ const SearchBar = ({ onClick, isClicked, min, max }: Props) => {
   const { playlists } = usePlaylists()
   const { currentTheme, setMood } = useTheme()
 
-  const handleEnterClick = () => {
-    if (playlists.length > 0 && searchInput.trim()) {
-      const randomIndex = Math.floor(Math.random() * playlists.length)
-      const randomPlaylist = playlists[randomIndex]
-      navigate(`/playlist/${randomPlaylist.id}`)
-    }
+  const normalizeText = (text: string) =>
+  text
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+
+
+const handleEnterClick = () => {
+  if (!searchInput.trim()) return
+
+  const normalizedInput = normalizeText(searchInput)
+
+  const foundPlaylist = playlists.find((playlist) =>
+    normalizeText(playlist.mood.name).includes(normalizedInput)
+  )
+
+  if (foundPlaylist) {
+    setMood(foundPlaylist.mood.name)
+    navigate(`/playlist/${foundPlaylist.id}`)
+  } else {
+    setMood('')
+    navigate("/empty")
   }
+}
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
