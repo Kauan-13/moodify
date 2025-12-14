@@ -22,6 +22,13 @@ interface Theme {
   accent: string
 }
 
+const normalizeText = (text: string) =>
+  text
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim()
+
 const moodThemes: Record<string, Theme> = {
   default: {
     primary: "#101010",
@@ -256,7 +263,6 @@ const moodThemes: Record<string, Theme> = {
   },
 }
 
-// função utilitária de aplicar tema
 function applyTheme(theme: Theme) {
   const root = document.documentElement
   Object.entries(theme).forEach(([key, value]) => {
@@ -264,143 +270,7 @@ function applyTheme(theme: Theme) {
   })
 }
 
-// provider
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
-
-const fallbackThemes: Theme[] = [
-  {
-    // Roxo/Azul
-    primary: "#6366F1",
-    primaryLight: "#C7D2FE",
-    background: "#FAFBFF",
-    backgroundAlt: "#F0F3FF",
-    text: "#1A1A1A",
-    textSecondary: "#6366F1",
-    inputText: "#6366F1",
-    border: "#A5B4FC",
-    accent: "#8B5CF6",
-  },
-  {
-    // Rosa/Vermelho
-    primary: "#EC4899",
-    primaryLight: "#FBCFE8",
-    background: "#FFF5FA",
-    backgroundAlt: "#FFEEF5",
-    text: "#1A1A1A",
-    textSecondary: "#EC4899",
-    inputText: "#EC4899",
-    border: "#F9A8D4",
-    accent: "#F43F5E",
-  },
-  {
-    // Verde/Ciano
-    primary: "#10B981",
-    primaryLight: "#A7F3D0",
-    background: "#F0FDF9",
-    backgroundAlt: "#ECFDF5",
-    text: "#1A1A1A",
-    textSecondary: "#059669",
-    inputText: "#10B981",
-    border: "#6EE7B7",
-    accent: "#14B8A6",
-  },
-  {
-    // Laranja
-    primary: "#F59E0B",
-    primaryLight: "#FDE68A",
-    background: "#FFFBEB",
-    backgroundAlt: "#FEF3C7",
-    text: "#1A1A1A",
-    textSecondary: "#F59E0B",
-    inputText: "#F59E0B",
-    border: "#FCD34D",
-    accent: "#F97316",
-  },
-  {
-    // Roxo/Magenta
-    primary: "#8B5CF6",
-    primaryLight: "#DDD6FE",
-    background: "#FAF5FF",
-    backgroundAlt: "#F3E8FF",
-    text: "#1A1A1A",
-    textSecondary: "#8B5CF6",
-    inputText: "#8B5CF6",
-    border: "#C4B5FD",
-    accent: "#D946EF",
-  },
-  {
-    // Ciano/Azul
-    primary: "#06B6D4",
-    primaryLight: "#A5F3FC",
-    background: "#F0FDFF",
-    backgroundAlt: "#ECFEFF",
-    text: "#1A1A1A",
-    textSecondary: "#0891B2",
-    inputText: "#06B6D4",
-    border: "#67E8F9",
-    accent: "#0EA5E9",
-  },
-  {
-    // Turquesa
-    primary: "#14B8A6",
-    primaryLight: "#99F6E4",
-    background: "#F0FDFA",
-    backgroundAlt: "#CCFBF1",
-    text: "#1A1A1A",
-    textSecondary: "#0D9488",
-    inputText: "#14B8A6",
-    border: "#5EEAD4",
-    accent: "#10B981",
-  },
-  {
-    // Pêssego
-    primary: "#FB923C",
-    primaryLight: "#FED7AA",
-    background: "#FFF7ED",
-    backgroundAlt: "#FFEDD5",
-    text: "#1A1A1A",
-    textSecondary: "#EA580C",
-    inputText: "#FB923C",
-    border: "#FDBA74",
-    accent: "#F97316",
-  },
-  {
-    // Lavanda
-    primary: "#A855F7",
-    primaryLight: "#E9D5FF",
-    background: "#FAF5FF",
-    backgroundAlt: "#F3E8FF",
-    text: "#1A1A1A",
-    textSecondary: "#9333EA",
-    inputText: "#A855F7",
-    border: "#D8B4FE",
-    accent: "#C026D3",
-  },
-  {
-    // Coral
-    primary: "#F87171",
-    primaryLight: "#FECACA",
-    background: "#FFF5F5",
-    backgroundAlt: "#FEE2E2",
-    text: "#1A1A1A",
-    textSecondary: "#DC2626",
-    inputText: "#F87171",
-    border: "#FCA5A5",
-    accent: "#EF4444",
-  },
-]
-
-//Gera um hash numérico simples a partir de uma string
-
-const hashString = (str: string): number => {
-  let hash = 0
-  for (let i = 0; i < str.length; i++) {
-    const char = str.charCodeAt(i)
-    hash = (hash << 5) - hash + char
-    hash = hash & hash
-  }
-  return Math.abs(hash)
-}
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [mood, setMood] = useState("")
@@ -415,28 +285,24 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
       return
     }
 
-    const moodKey = mood.toLowerCase().trim()
+    const normalizedMood = normalizeText(mood)
 
-    const theme = Object.entries(moodThemes).find(([key]) => moodKey.includes(key) || key.includes(moodKey))
+    const theme = Object.entries(moodThemes).find(([key]) => {
+      const normalizedKey = normalizeText(key)
+      return normalizedMood.includes(normalizedKey) || normalizedKey.includes(normalizedMood)
+    })
 
-    let selected: Theme
-    if (theme) {
-      selected = theme[1]
-    } else {
-      const hash = hashString(moodKey)
-      const themeIndex = hash % fallbackThemes.length
-      selected = fallbackThemes[themeIndex]
-    }
+    const selected = theme ? theme[1] : moodThemes.fallback
 
     setCurrentTheme(selected)
     applyTheme(selected)
-
-    const colors = getMoodColors(mood)
-    setCurrentColors(colors)
+    setCurrentColors(getMoodColors(mood))
   }, [mood])
 
   return (
-    <ThemeContext.Provider value={{ mood, setMood, currentTheme, currentColors }}>{children}</ThemeContext.Provider>
+    <ThemeContext.Provider value={{ mood, setMood, currentTheme, currentColors }}>
+      {children}
+    </ThemeContext.Provider>
   )
 }
 
